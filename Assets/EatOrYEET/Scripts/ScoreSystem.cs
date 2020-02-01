@@ -12,14 +12,14 @@ public class ScoreSystem : MonoBehaviour
     void Start()
     {
         _currentScore = 0;
-        _globalScoreMultiplierBonus = 1f;
+        _globalScoreMultiplierBonus = 0f;
 
         // Set up initial multiplier bonuses for all Food Categories
         _foodCategoryMultiplierBonus = new Dictionary<sFood.FoodCategory, float>();
         sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
 
         foreach(sFood.FoodCategory category in foodCategories){
-            _foodCategoryMultiplierBonus[category] = 1f;
+            _foodCategoryMultiplierBonus[category] = 0f;
         }
     }
 
@@ -48,8 +48,8 @@ public class ScoreSystem : MonoBehaviour
             scoreValue *= -1;
         }
 
-        scoreValue = (int)(scoreValue + (scoreValue * (totalCategoryMultiplierBonuses - 1)));
-        scoreValue = (int)(scoreValue + (scoreValue * (_globalScoreMultiplierBonus - 1)));
+        scoreValue = (int)(scoreValue * (1 + totalCategoryMultiplierBonuses));
+        scoreValue = (int)(scoreValue * (1 + _globalScoreMultiplierBonus));
 
         _currentScore += scoreValue;
 
