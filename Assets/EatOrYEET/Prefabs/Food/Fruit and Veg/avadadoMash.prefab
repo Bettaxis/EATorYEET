@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1089901858400885018}
   - component: {fileID: 6637341151610152419}
   - component: {fileID: 1088837429185770932}
-  - component: {fileID: 1404389093453772910}
   - component: {fileID: -3606791535906124482}
+  - component: {fileID: 3023841825360960692}
   m_Layer: 0
   m_Name: avadadoMash
   m_TagString: Untagged
@@ -100,20 +100,6 @@ MonoBehaviour:
   distanceFromPlayer: 0.3
   playerTransform: {fileID: 0}
   moving: 1
---- !u!64 &1404389093453772910
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4908998982578737471}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2026388250663816907, guid: fa094e42fc0b48d45b6fda7fb4036aec, type: 3}
 --- !u!54 &-3606791535906124482
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3023841825360960692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908998982578737471}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.094842575, y: 0.045018148, z: 0.094842575}
+  m_Center: {x: 0, y: 0.022509074, z: 0}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5854072764968017438}
   - component: {fileID: 3199489324541944872}
   - component: {fileID: 9176743937127340241}
-  - component: {fileID: -5987077980063615130}
   - component: {fileID: 7842870908775739616}
   - component: {fileID: -2890300563054003279}
+  - component: {fileID: 7388428062618525760}
   m_Layer: 0
   m_Name: appleRedPiece
   m_TagString: Untagged
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-5987077980063615130
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7450785506467769357}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1957988998001888430, guid: 63bba5988a5704d439462e2a5713ff83, type: 3}
 --- !u!114 &7842870908775739616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7388428062618525760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450785506467769357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.048276503, y: 0.057586525, z: 0.045210037}
+  m_Center: {x: -0.0018344652, y: 0.028793262, z: 0}
