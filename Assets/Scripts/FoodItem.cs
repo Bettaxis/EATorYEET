@@ -34,10 +34,12 @@ public class FoodItem : MonoBehaviour
             Destroy(this.gameObject);
         }  
 
-        else
+        else if(other.gameObject.name == "YeetZone")
         { 
-            rigidbody.AddForce(Vector3.up, ForceMode.Impulse);
-            moving = false;
+            Debug.Log("Yeet Zone Triggered!");
+            //rigidbody.AddForce(Vector3.back, ForceMode.Impulse);
+            rigidbody.AddExplosionForce(400.0f, other.transform.position, 10f, 200f);
+            //moving = false;
         } 
     }
 
