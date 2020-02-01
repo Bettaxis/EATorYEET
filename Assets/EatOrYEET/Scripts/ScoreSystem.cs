@@ -5,25 +5,38 @@ using UnityEngine;
 public class ScoreSystem : MonoBehaviour
 {
     private int _currentScore;
-    private float _globalScoreMultiplier;
-    private Dictionary<sFood.FoodCategory, float> _foodCategoryMultipliers;
+    private float _globalScoreMultiplierBonus;
+    private Dictionary<sFood.FoodCategory, float> _foodCategoryMultiplierBonus;
 
     // Start is called before the first frame update
     void Start()
     {
         _currentScore = 0;
-        _globalScoreMultiplier = 1f;
-        _foodCategoryMultipliers = new Dictionary<sFood.FoodCategory, float>();
+        _globalScoreMultiplierBonus = 1f;
+
+        // Set up initial multiplier bonuses for all Food Categories
+        _foodCategoryMultiplierBonus = new Dictionary<sFood.FoodCategory, float>();
+        sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
+
+        foreach(sFood.FoodCategory category in foodCategories){
+            _foodCategoryMultiplierBonus[category] = 1f;
+        }
     }
 
     public void AdjustScore(FoodItem food, bool addToScore)
     {
         int scoreValue = 1;
+        float totalCategoryMultiplierBonuses = 0;
 
         // Checking here because the food scriptable objects have not been set up yet
         if(food.foodScriptableObject != null)
         {
             scoreValue = food.foodScriptableObject.pointValue;
+
+            foreach(sFood.FoodCategory category in food.foodScriptableObject.foodCategories)
+            {
+                totalCategoryMultiplierBonuses += _foodCategoryMultiplierBonus[category];
+            }
         }
         else
         {
@@ -35,7 +48,8 @@ public class ScoreSystem : MonoBehaviour
             scoreValue *= -1;
         }
 
-        scoreValue = (int)(scoreValue * _globalScoreMultiplier);
+        scoreValue = (int)(scoreValue + (scoreValue * (totalCategoryMultiplierBonuses - 1)));
+        scoreValue = (int)(scoreValue + (scoreValue * (_globalScoreMultiplierBonus - 1)));
 
         _currentScore += scoreValue;
 
@@ -54,24 +68,52 @@ public class ScoreSystem : MonoBehaviour
     {
         if(multiplier == 0)
         {
-            Debug.LogError("ScoreSystem::SetMultiplier - multiplier should not be 0!");
+            Debug.LogError("ScoreSystem::SetGlobalMultiplier - multiplier should not be 0!");
             return;
         }
 
         if(duration <= 0)
         {
-            Debug.LogError("ScoreSystem::SetMultiplier - duration should be greater than 0!");
+            Debug.LogError("ScoreSystem::SetGlobalMultiplier - duration should be greater than 0!");
             return;
         }
 
-        StartCoroutine(TemporaryScoreMultiplier(multiplier, duration));
+        StartCoroutine(TemporaryGlobalScoreMultiplier(multiplier, duration));
     }
 
-    private IEnumerator TemporaryScoreMultiplier(float multiplier, float duration)
+    private IEnumerator TemporaryGlobalScoreMultiplier(float multiplier, float duration)
     {
-        _globalScoreMultiplier *= multiplier;
+        _globalScoreMultiplierBonus += multiplier;
         yield return new WaitForSeconds(duration);
-        _globalScoreMultiplier /= multiplier;
+        _globalScoreMultiplierBonus -= multiplier;
+
+        yield return null;
+    }
+
+    // multiplier is the value by which to multiply the score
+    // duration is the number of seconds to set the multiplier for
+    public void SetCategoryMultiplier(float multiplier, float duration, sFood.FoodCategory foodCategory)
+    {
+        if(multiplier == 0)
+        {
+            Debug.LogError("ScoreSystem::SetCategoryMultiplier - multiplier should not be 0!");
+            return;
+        }
+
+        if(duration <= 0)
+        {
+            Debug.LogError("ScoreSystem::SetCategoryMultiplier - duration should be greater than 0!");
+            return;
+        }
+
+        StartCoroutine(TemporaryCategoryScoreMultiplier(multiplier, duration, foodCategory));
+    }
+
+    private IEnumerator TemporaryCategoryScoreMultiplier(float multiplier, float duration, sFood.FoodCategory foodCategory)
+    {
+        _foodCategoryMultiplierBonus[foodCategory] += multiplier;
+        yield return new WaitForSeconds(duration);
+        _foodCategoryMultiplierBonus[foodCategory] -= multiplier;
 
         yield return null;
     }
