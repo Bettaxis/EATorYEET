@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8427004506622265714}
   - component: {fileID: -8835362537984138222}
   - component: {fileID: -2916172501581341288}
+  - component: {fileID: 8578407575210702376}
   m_Layer: 0
   m_Name: OrangeSlice
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MonoBehaviour:
   distanceFromPlayer: 0.3
   playerTransform: {fileID: 0}
   moving: 1
+--- !u!54 &8578407575210702376
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840324947246595502}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

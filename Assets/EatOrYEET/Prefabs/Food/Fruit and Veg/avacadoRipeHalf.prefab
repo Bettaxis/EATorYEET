@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 4457373285428484332}
   - component: {fileID: 7991439662135387157}
   - component: {fileID: -3582609216978322016}
+  - component: {fileID: 9132271163058562826}
   m_Layer: 0
   m_Name: avacadoRipeHalf
   m_TagString: Untagged
@@ -178,3 +179,19 @@ MonoBehaviour:
   distanceFromPlayer: 0.3
   playerTransform: {fileID: 0}
   moving: 1
+--- !u!54 &9132271163058562826
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564608462441287881}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

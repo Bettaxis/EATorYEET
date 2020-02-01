@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8159911461413963633}
   - component: {fileID: 8237548056810300020}
   - component: {fileID: 7443082191307923127}
+  - component: {fileID: 421791113862980283}
   m_Layer: 0
   m_Name: macaron05
   m_TagString: Untagged
@@ -113,3 +114,19 @@ MonoBehaviour:
   distanceFromPlayer: 0.3
   playerTransform: {fileID: 0}
   moving: 1
+--- !u!54 &421791113862980283
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566331258664776621}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
