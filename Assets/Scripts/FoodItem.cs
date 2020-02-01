@@ -27,10 +27,6 @@ public class FoodItem : MonoBehaviour
     {
         if (other.gameObject.name == "FoodHole")
         {
-            if(other.gameObject.GetComponent<PlayAudioSoundsList>() != null)
-            {
-                other.gameObject.GetComponent<PlayAudioSoundsList>().PlaySound();
-            }
             Debug.Log(this.gameObject.name + " is destroyed!");
             Destroy(this.gameObject);
         }   
