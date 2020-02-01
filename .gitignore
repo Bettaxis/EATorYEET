@@ -71,29 +71,7 @@ crashlytics-build.properties
 /Assets/Plugins/Sirenix/Demos/*
 
 # But keep the demo packages themselves.
-!/Assets/Plugins/Sirenix/Demos/*.unitypackage 
-Assets/Oculus/
-ProjectSettings/ProjectSettings.asset
-ProjectSettings/ProjectVersion.txt
+!/Assets/Plugins/Sirenix/Demos/*.unitypackage
 Assets/SteamVR
 Assets/SteamVR_Input
 Assets/Plugins/Sirenix/Demos
-
-# FMOD
-/Assets/FMODStudioCache.asset
-/Assets/FMODStudioCache.asset.meta
-fmod.log
-fmod_editor.log
-Assets/Plugins/FMOD/Resources/FMODStudioCache.asset
-Assets/Plugins/FMOD/Resources/FMODStudioCache.asset.meta
-Assets/StreamingAssets/**/*.bank
-Assets/StreamingAssets/**/*.bank.meta
-Assets/StreamingAssets/**/*.assets.bank.meta
-Assets/StreamingAssets/**/*.assets.bank.meta
-fmod_editor.log
-
-# FMOD studio (In folder Flow-Weaver_FMOD)
-/Flow-Weaver_FMOD/**.user
-/Flow-Weaver_FMOD/**.unsaved
-/Flow-Weaver_FMOD/**.cache
-/Flow-Weaver_FMOD/**.restore
