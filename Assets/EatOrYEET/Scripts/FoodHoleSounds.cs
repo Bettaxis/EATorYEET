@@ -32,7 +32,7 @@ public class FoodHoleSounds : MonoBehaviour
             if(_scoreSystem != null)
             {
                 PowerUp powerup = other.gameObject.GetComponent<PowerUp>();
-                _scoreSystem.SetFlatMultiplier(powerup.GetScoreMultiplier(), powerup.GetMultiplierDuration());
+                _scoreSystem.SetGlobalMultiplier(powerup.GetScoreMultiplier(), powerup.GetMultiplierDuration());
             }
             else 
             {

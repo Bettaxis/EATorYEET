@@ -5,25 +5,37 @@ using UnityEngine;
 public class ScoreSystem : MonoBehaviour
 {
     private int _currentScore;
-    private float _scoreMultiplier;
+    private float _globalScoreMultiplier;
+    private Dictionary<sFood.FoodCategory, float> _foodCategoryMultipliers;
 
     // Start is called before the first frame update
     void Start()
     {
         _currentScore = 0;
-        _scoreMultiplier = 1f;
+        _globalScoreMultiplier = 1f;
+        _foodCategoryMultipliers = new Dictionary<sFood.FoodCategory, float>();
     }
 
     public void AdjustScore(FoodItem food, bool addToScore)
     {
         int scoreValue = 1;
 
+        // Checking here because the food scriptable objects have not been set up yet
+        if(food.foodScriptableObject != null)
+        {
+            scoreValue = food.foodScriptableObject.pointValue;
+        }
+        else
+        {
+            Debug.Log("ScoreSystem::AdjustScore - Food Object does not have food scriptable object set: " + food.gameObject.name);
+        }
+
         if(!addToScore)
         {
             scoreValue *= -1;
         }
 
-        scoreValue = (int)(scoreValue * _scoreMultiplier);
+        scoreValue = (int)(scoreValue * _globalScoreMultiplier);
 
         _currentScore += scoreValue;
 
@@ -38,7 +50,7 @@ public class ScoreSystem : MonoBehaviour
 
     // multiplier is the value by which to multiply the score
     // duration is the number of seconds to set the multiplier for
-    public void SetFlatMultiplier(float multiplier, float duration)
+    public void SetGlobalMultiplier(float multiplier, float duration)
     {
         if(multiplier == 0)
         {
@@ -57,9 +69,9 @@ public class ScoreSystem : MonoBehaviour
 
     private IEnumerator TemporaryScoreMultiplier(float multiplier, float duration)
     {
-        _scoreMultiplier *= multiplier;
+        _globalScoreMultiplier *= multiplier;
         yield return new WaitForSeconds(duration);
-        _scoreMultiplier /= multiplier;
+        _globalScoreMultiplier /= multiplier;
 
         yield return null;
     }
