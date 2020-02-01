@@ -12,9 +12,16 @@ public class ScoreSystem : MonoBehaviour
         _currentScore = 0;
     }
 
-    public void AddScore(int score)
+    public void AdjustScore(FoodItem food, bool addToScore)
     {
-        _currentScore += score;
+        int scoreValue = 1;
+
+        if(!addToScore)
+        {
+            scoreValue *= -1;
+        }
+
+        _currentScore += scoreValue;
 
         // Debugging purposes. Remove when UI is added.
         Debug.Log("Player Score is now: " + _currentScore);

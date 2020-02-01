@@ -19,7 +19,7 @@ public class FoodHoleSounds : MonoBehaviour
 
             if(_scoreSystem != null)
             {
-                _scoreSystem.AddScore(1);
+                _scoreSystem.AdjustScore(other.gameObject.GetComponent<FoodItem>(), true);
             }
             else 
             {
