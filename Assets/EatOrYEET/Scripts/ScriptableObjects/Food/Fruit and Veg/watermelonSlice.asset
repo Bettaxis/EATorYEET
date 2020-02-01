@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
-  m_Name: watermelon
+  m_Name: watermelonSlice
   m_EditorClassIdentifier: 
   foodCategories: 02000000
   foodName: Watermelon
   pointValue: 500
+  staminaCost: 0
