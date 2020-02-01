@@ -10,6 +10,9 @@ public class FoodItem : MonoBehaviour
     public Transform playerTransform;
     public bool moving = true;
 
+    // Temporary use. Remove when proper spawning system is implemented
+    private bool isQuitting = false;
+
     private IEnumerator MoveCoroutine;
     // Start is called before the first frame update
     void Start()
@@ -70,5 +73,25 @@ public class FoodItem : MonoBehaviour
         }
     }
 
-    
+
+    void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
+
+    /// <summary>
+    /// This function is called when the MonoBehaviour will be destroyed.
+    /// </summary>
+    void OnDestroy()
+    {
+        // This is temporary. Replace this when the real spawning system is done.
+        if(!isQuitting)
+        {
+            GameObject obj = Instantiate(gameObject, new Vector3(0.02890274f, 2.325924f, 6.049408f), Quaternion.identity);
+            obj.transform.localScale = new Vector3(0.226374f, 0.226374f, 0.226374f);
+            obj.GetComponent<FoodItem>().moving = true;
+            obj.GetComponent<FoodItem>().enabled = true;
+            obj.SetActive(true);
+        }
+    }
 }
