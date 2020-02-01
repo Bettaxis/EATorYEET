@@ -8,13 +8,10 @@ public class PlayAudioSoundsList : MonoBehaviour
     public AudioClip[] audioSounds;
 
     [SerializeField]
-    private bool isRandomSound;
+    private bool isRandomSound = false;
 
-    [SerializeField]
     AudioSource audioSource;
-
     private int soundPlayIndex;
-
     private System.Random rng;
 
     void Start()
