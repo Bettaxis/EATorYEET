@@ -30,13 +30,7 @@ public class FoodItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.name == "FoodHole")
-        {
-            Debug.Log(this.gameObject.name + " is destroyed!");
-            Destroy(this.gameObject);
-        }  
-
-        else if(other.gameObject.name == "YeetZone")
+        if(other.gameObject.name == "YeetZone")
         { 
             Debug.Log("Yeet Zone Triggered!");
             //rigidbody.AddForce(Vector3.back, ForceMode.Impulse);

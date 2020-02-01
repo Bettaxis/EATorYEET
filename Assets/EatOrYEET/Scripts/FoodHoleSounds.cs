@@ -25,7 +25,10 @@ public class FoodHoleSounds : MonoBehaviour
             {
                 Debug.Log("Score System was not assigned to Food Hole. Score is not tracked");
             }
-        }  
+
+            Debug.Log("FoodHoleSounds::OnTriggerEnter - " + other.gameObject.name + " is deactivated!");
+            other.gameObject.SetActive(false);
+        }
 
         if (other.gameObject.GetComponent<PowerUp>() != null)
         {
