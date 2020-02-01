@@ -5,9 +5,12 @@ using UnityEngine;
 public class SimpleRotation : MonoBehaviour
 {
     public Vector3 rotationEulerIncrease;
-    private Vector3 newEuler = new Vector3();
+    private Vector3 newEuler;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        newEuler = transform.eulerAngles;
+    }
     void Update()
     {
         newEuler += rotationEulerIncrease;
