@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
+    //[SerializeField]
+    //private FoodItem
     public float speed = 0.25f;
 
     public float distanceFromPlayer = 0.3f; 
