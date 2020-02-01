@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8986931583323583149}
   - component: {fileID: 138758462224107675}
   - component: {fileID: 5967394289539970146}
+  - component: {fileID: 8177002880469925093}
+  - component: {fileID: 8223565751135847615}
   m_Layer: 0
   m_Name: lollipop03
   m_TagString: Untagged
@@ -79,3 +81,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8177002880469925093
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5398874161029005502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5970331249653925319, guid: 1bf82b926e2e1c348aa0ca5985a37caa, type: 3}
+--- !u!114 &8223565751135847615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5398874161029005502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 3fe896a56b85881469a708b0513fa38c,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8777105673761438385}
   - component: {fileID: 2519866195903343098}
   - component: {fileID: 4361962105889579326}
+  - component: {fileID: 502299329630754478}
   m_Layer: 0
   m_Name: fries_2
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &502299329630754478
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667940024263892613}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6254067
+  m_Center: {x: 0.3764469, y: 0.94, z: -0.23733613}
 --- !u!1 &5785530253909202516
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +104,7 @@ GameObject:
   - component: {fileID: 4404621390029099071}
   - component: {fileID: 7084501610123731181}
   - component: {fileID: 1113170388685219037}
+  - component: {fileID: 2594128243603588858}
   m_Layer: 0
   m_Name: bag
   m_TagString: Untagged
@@ -158,6 +173,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2594128243603588858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785530253909202516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0152984, y: 1.2771592, z: 0.7289274}
+  m_Center: {x: 0, y: -0.037189245, z: 0.004037872}
 --- !u!1 &7387871880629359075
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5826997720620229616}
+  - component: {fileID: 5949011140872174076}
   m_Layer: 0
   m_Name: fries
   m_TagString: Untagged
@@ -190,3 +219,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5949011140872174076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387871880629359075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: d1f32e0dbac66c0499ba2b4febe76fbf,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

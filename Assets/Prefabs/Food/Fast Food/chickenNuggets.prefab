@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5083399644907459459}
   - component: {fileID: 8915947903615479654}
   - component: {fileID: 4312016345713463952}
+  - component: {fileID: 1809674992611849819}
   m_Layer: 0
   m_Name: nugget
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &1809674992611849819
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298815244344590895}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5711064
+  m_Center: {x: 0, y: -0.25, z: 0}
 --- !u!1 &1965665066586754780
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3250517210277002447}
+  - component: {fileID: 7829205735114982469}
   m_Layer: 0
   m_Name: chickenNuggets
   m_TagString: Untagged
@@ -111,6 +126,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7829205735114982469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965665066586754780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 44954add8a28d834d8d3c2cb206a0f7e,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1
 --- !u!1 &3281957269486848363
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +155,7 @@ GameObject:
   - component: {fileID: 4675251477777436416}
   - component: {fileID: 2274523481705381842}
   - component: {fileID: 8265030218144431074}
+  - component: {fileID: 6093155104046279503}
   m_Layer: 0
   m_Name: bag
   m_TagString: Untagged
@@ -190,3 +224,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6093155104046279503
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3281957269486848363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7033663635467597644, guid: 417188c7773d1224d9bbb51457a31189, type: 3}

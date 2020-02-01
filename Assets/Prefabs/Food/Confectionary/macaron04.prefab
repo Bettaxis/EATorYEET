@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4526442224297169203}
   - component: {fileID: 4866739213669821189}
   - component: {fileID: 1204335685449488380}
+  - component: {fileID: -1674672368674873025}
+  - component: {fileID: -6855949703533368966}
   m_Layer: 0
   m_Name: macaron04
   m_TagString: Untagged
@@ -79,3 +81,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-1674672368674873025
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615443801306637088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 105201220031543891, guid: f8ef987a4d248094ba33fbeb9b19f6e9, type: 3}
+--- !u!114 &-6855949703533368966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615443801306637088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 8a091d08644b31a47bbf5d39acd8112c,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

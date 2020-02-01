@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6099983486313368510}
   - component: {fileID: 3025425087512326536}
   - component: {fileID: 8845335188393282929}
+  - component: {fileID: 7503736269875253983}
+  - component: {fileID: 2661808008062725855}
   m_Layer: 0
   m_Name: pizza
   m_TagString: Untagged
@@ -79,3 +81,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7503736269875253983
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132619278463007149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3262910355955414891, guid: cde65b097dfff9e439e216e7077cf155, type: 3}
+--- !u!114 &2661808008062725855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132619278463007149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: f897cbb6644c66541a36ed3d9a0b29b9,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

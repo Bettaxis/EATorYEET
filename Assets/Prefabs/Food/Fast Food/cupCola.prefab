@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8110782380257709535}
   - component: {fileID: 996508438811719657}
   - component: {fileID: 6838934074548472592}
+  - component: {fileID: 4056311060365389030}
+  - component: {fileID: 2072264011407338458}
   m_Layer: 0
   m_Name: cupCola
   m_TagString: Untagged
@@ -79,3 +81,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4056311060365389030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103722156833177548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2807328, y: 1.9973335, z: 1.2788517}
+  m_Center: {x: -0.020532787, y: 1.0026996, z: -0.000000059604645}
+--- !u!114 &2072264011407338458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103722156833177548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 818de740637157c41a7426adba7589dc,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

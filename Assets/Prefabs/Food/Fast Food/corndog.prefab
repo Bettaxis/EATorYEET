@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2108867223399358180}
   - component: {fileID: 6926313224004560082}
   - component: {fileID: 3684995926187448363}
+  - component: {fileID: 7623043888666679234}
+  - component: {fileID: 6020852001143177206}
   m_Layer: 0
   m_Name: corndog
   m_TagString: Untagged
@@ -79,3 +81,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &7623043888666679234
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107319133679135991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2220935
+  m_Height: 1.8916975
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.94584876, z: 0.0071676597}
+--- !u!114 &6020852001143177206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107319133679135991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 1d2787c347fa1044ead2d1d98e8adc6f,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

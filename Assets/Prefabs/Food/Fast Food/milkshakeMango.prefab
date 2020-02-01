@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5246772721593432335}
   - component: {fileID: 3858249260869223225}
   - component: {fileID: 7401604593270783936}
+  - component: {fileID: 3661196698409796209}
+  - component: {fileID: 2657342715493491013}
   m_Layer: 0
   m_Name: milkshakeMango
   m_TagString: Untagged
@@ -79,3 +81,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3661196698409796209
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118415015615908636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2612135, y: 2.0038404, z: 1.2788517}
+  m_Center: {x: -0.010773182, y: 1.0059531, z: -0.000000059604645}
+--- !u!114 &2657342715493491013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118415015615908636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 5ebf07548db9ad040b41fc2fb556b20d,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1
