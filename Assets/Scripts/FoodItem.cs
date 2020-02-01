@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
-    public float speed = 0.2f;
+    public float speed = 0.25f;
 
-    public float distanceFromPlayer = 0.75f; 
+    public float distanceFromPlayer = 0.3f; 
     public Transform playerTransform;
     public bool moving = true;
 
