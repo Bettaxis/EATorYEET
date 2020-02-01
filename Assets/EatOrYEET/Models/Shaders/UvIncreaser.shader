@@ -3,6 +3,7 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+		_Offset ("Offset", Vector) = (0,0,0,0)
     }
     SubShader
     {
@@ -34,12 +35,13 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+			float4 _Offset;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv + float2(0, _Time.x), _MainTex);
+                o.uv = TRANSFORM_TEX(v.uv + _Offset.xy, _MainTex);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
