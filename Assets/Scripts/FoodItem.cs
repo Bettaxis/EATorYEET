@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class FoodItem : MonoBehaviour
 {
-    public float speed = 0.2f;
+    public float speed = 0.25f;
 
-    public float distanceFromPlayer = 0.75f; 
+    public float distanceFromPlayer = 0.3f; 
     public Transform playerTransform;
     public bool moving = true;
 
-    private IEnumerator MoveCoroutine;
+    private Rigidbody rigidbody;
+
+    IEnumerator MoveCoroutine;
     // Start is called before the first frame update
     void Start()
     {
         MoveCoroutine = MoveTowardsPlayer();
+        rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,7 +32,15 @@ public class FoodItem : MonoBehaviour
         {
             Debug.Log(this.gameObject.name + " is destroyed!");
             Destroy(this.gameObject);
-        }   
+        }  
+
+        else if(other.gameObject.name == "YeetZone")
+        { 
+            Debug.Log("Yeet Zone Triggered!");
+            //rigidbody.AddForce(Vector3.back, ForceMode.Impulse);
+            rigidbody.AddExplosionForce(400.0f, other.transform.position, 10f, 200f);
+            //moving = false;
+        } 
     }
 
     /// <summary>
