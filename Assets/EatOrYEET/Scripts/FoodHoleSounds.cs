@@ -25,6 +25,19 @@ public class FoodHoleSounds : MonoBehaviour
             {
                 Debug.Log("Score System was not assigned to Food Hole. Score is not tracked");
             }
-        }   
+        }  
+
+        if (other.gameObject.GetComponent<PowerUp>() != null)
+        {
+            if(_scoreSystem != null)
+            {
+                PowerUp powerup = other.gameObject.GetComponent<PowerUp>();
+                _scoreSystem.SetFlatMultiplier(powerup.GetScoreMultiplier(), powerup.GetMultiplierDuration());
+            }
+            else 
+            {
+                Debug.Log("Score System was not assigned to Food Hole. Score is not tracked");
+            }
+        }    
     }
 }
