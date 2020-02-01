@@ -302,27 +302,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &627323857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 512852481125233239, guid: 791e538878e4006459dc6695fffd911f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1866131542}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &627323858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627323857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33668164c4d7e1545b25d109ea27e16e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  consoleLogPrefab: {fileID: 764095787630477021, guid: b64d554848f79ea4fa3cce0c676992f5,
-    type: 3}
-  logs: []
 --- !u!1 &909716679
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 512852480453904627, guid: 791e538878e4006459dc6695fffd911f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 512852480629292098, guid: 791e538878e4006459dc6695fffd911f,
         type: 3}
