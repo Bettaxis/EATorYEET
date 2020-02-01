@@ -13,11 +13,9 @@ public class FoodItem : MonoBehaviour
     // Temporary use. Remove when proper spawning system is implemented
     private bool isQuitting = false;
 
-    private IEnumerator MoveCoroutine;
     // Start is called before the first frame update
     void Start()
     {
-        MoveCoroutine = MoveTowardsPlayer();
     }
 
     // Update is called once per frame
@@ -40,26 +38,10 @@ public class FoodItem : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        // if (moving)
-        // {
-        //     StartCoroutine(MoveCoroutine);
-        // }
-
         if (moving)
-        MoveTowardsPlayerFunction();
-    }
-
-    private IEnumerator MoveTowardsPlayer()
-    {   
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, step);
-
-        if (Vector3.Distance(transform.position, playerTransform.position) <= 1.5f)
         {
-            moving = false;
+            MoveTowardsPlayerFunction();
         }
-
-        yield return null;
     }
 
     public void MoveTowardsPlayerFunction()
