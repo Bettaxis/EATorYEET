@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 512852481125233227}
   - component: {fileID: 512852481125233236}
   - component: {fileID: 512852481125233237}
+  - component: {fileID: 4402079299048065265}
   m_Layer: 5
   m_Name: Console
   m_TagString: Untagged
@@ -502,3 +503,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4402079299048065265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512852481125233239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33668164c4d7e1545b25d109ea27e16e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  consoleLogPrefab: {fileID: 764095787630477021, guid: b64d554848f79ea4fa3cce0c676992f5,
+    type: 3}
+  content: {fileID: 512852480453904627}
+  logs: []

@@ -6,9 +6,10 @@ using UnityEngine;
 public class Console : MonoBehaviour
 {
     [SerializeField] private ConsoleLog consoleLogPrefab;
-    
-    [SerializeField] private List<ConsoleLog> logs = new List<ConsoleLog>();
+    [SerializeField] private Transform content;
 
+    private readonly Queue<ConsoleLog> logs = new Queue<ConsoleLog>();
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
@@ -19,14 +20,8 @@ public class Console : MonoBehaviour
 
     private void CreateLog(string message)
     {
-        ConsoleLog log = Instantiate(consoleLogPrefab, transform);
-        log.Initialize(this, message);
-        logs.Add(log);
-    }
-
-    public void RemoveLog(ConsoleLog _log)
-    {
-        logs.Remove(_log);
-        Destroy(_log.gameObject);
+        ConsoleLog log = Instantiate(consoleLogPrefab, content);
+        log.Initialize(null, message);
+        logs.Enqueue(log);
     }
 }

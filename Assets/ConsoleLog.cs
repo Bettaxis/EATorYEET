@@ -1,43 +1,52 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ConsoleLog : MonoBehaviour
+public class ConsoleLog: MonoBehaviour
 {
+    [Header("References:")]
+    [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private float displayForHowLongInSeconds = 3f;
-
-    private Console console;
+    
     private bool isInit;
+    private float lifetimeOfLogInSeconds;
     private float accumulatedTime;
-
-    public void Initialize(Console _console, string message)
+    
+    public void Initialize(Sprite _sprite, String _message, float _durationInSeconds = 3f)
     {
-        if (console == null)
-        {
-            Debug.LogWarning("Console log could not be created.");
-        }
+        ChangeSprite(_sprite);
+        ChangeText(_message);
+        SetLogDuration(_durationInSeconds);
 
-        console = _console;
-        text.text = message;
-        
         isInit = true;
     }
-    
+
     private void Update()
     {
         if (!isInit)
-        {
             return;
-        }
-            
+
         accumulatedTime += Time.deltaTime;
 
-        if (accumulatedTime >= displayForHowLongInSeconds)
+        if (accumulatedTime >= lifetimeOfLogInSeconds)
         {
-            console.RemoveLog(this);
+            Destroy(gameObject);
         }
+    }
+
+    private void SetLogDuration(float _durationInSeconds)
+    {
+        lifetimeOfLogInSeconds = _durationInSeconds;
+    }
+    
+    private void ChangeSprite(Sprite _sprite)
+    {
+        image.sprite = _sprite;
+    }
+    
+    private void ChangeText(string _text)
+    {
+        text.text = _text;
     }
 }
