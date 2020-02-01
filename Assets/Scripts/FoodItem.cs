@@ -10,11 +10,14 @@ public class FoodItem : MonoBehaviour
     public Transform playerTransform;
     public bool moving = true;
 
-    private IEnumerator MoveCoroutine;
+    private Rigidbody rigidbody;
+
+    IEnumerator MoveCoroutine;
     // Start is called before the first frame update
     void Start()
     {
         MoveCoroutine = MoveTowardsPlayer();
+        rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,7 +32,13 @@ public class FoodItem : MonoBehaviour
         {
             Debug.Log(this.gameObject.name + " is destroyed!");
             Destroy(this.gameObject);
-        }   
+        }  
+
+        else
+        { 
+            rigidbody.AddForce(Vector3.up, ForceMode.Impulse);
+            moving = false;
+        } 
     }
 
     /// <summary>
