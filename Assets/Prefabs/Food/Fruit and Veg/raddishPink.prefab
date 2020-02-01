@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1420524745992909419}
+  - component: {fileID: -2179753886141161360}
   m_Layer: 0
   m_Name: raddishPink
   m_TagString: Untagged
@@ -112,6 +113,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2179753886141161360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733102653559652472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 73db0b58dc0712846add136d33c4e6a0,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1
 --- !u!1 &4362388047159837443
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +221,7 @@ GameObject:
   - component: {fileID: 3636566137477514557}
   - component: {fileID: 1008050423221183237}
   - component: {fileID: 1115598905072630144}
+  - component: {fileID: 3090702017817074424}
   m_Layer: 0
   m_Name: raddish
   m_TagString: Untagged
@@ -270,3 +290,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &3090702017817074424
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7576395022428803146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.043294594
+  m_Height: 0.077614896
+  m_Direction: 1
+  m_Center: {x: 5.915798e-10, y: 0.039700247, z: 0.0000000017747394}

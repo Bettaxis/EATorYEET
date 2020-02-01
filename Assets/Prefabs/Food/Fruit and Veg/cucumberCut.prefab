@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 694452463841749502}
   - component: {fileID: 8428546528068604872}
   - component: {fileID: 2865625280350416689}
+  - component: {fileID: -5818162622912912723}
+  - component: {fileID: 1316124085360325741}
   m_Layer: 0
   m_Name: cucumberCut
   m_TagString: Untagged
@@ -79,3 +81,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &-5818162622912912723
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609549730873629677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.04006561
+  m_Height: 0.18019097
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.037893437, z: 0.004404761}
+--- !u!114 &1316124085360325741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609549730873629677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 3834258fa622de34eb00bb6321e60302,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

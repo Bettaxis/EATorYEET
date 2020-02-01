@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
   m_Name: macaron
   m_EditorClassIdentifier: 
-  foodCategories: 
-  foodName: New Food
-  pointValue: 0
+  foodCategories: 05000000
+  foodName: Macaron
+  pointValue: 50

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
-  m_Name: milkshakeMango
+  m_Name: milkshakeStrawberry
   m_EditorClassIdentifier: 
   foodCategories: 0200000005000000
-  foodName: Mango Milkshake
+  foodName: Strawberry Milkshake
   pointValue: 300

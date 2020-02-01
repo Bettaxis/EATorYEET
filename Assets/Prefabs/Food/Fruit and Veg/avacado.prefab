@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7083214666703305682}
   - component: {fileID: 2240440256184762852}
   - component: {fileID: 5488531018068213021}
+  - component: {fileID: 8502396585519540408}
   m_Layer: 0
   m_Name: avacado
   m_TagString: Untagged
@@ -79,3 +80,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8502396585519540408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059588819298617793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 1620c85abf723ee4ba1e22b9bde05caf,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

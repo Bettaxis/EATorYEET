@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4647930165568529114}
   - component: {fileID: 4457373285428484332}
   - component: {fileID: 7991439662135387157}
+  - component: {fileID: -3582609216978322016}
   m_Layer: 0
   m_Name: avacadoRipeHalf
   m_TagString: Untagged
@@ -159,3 +160,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-3582609216978322016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564608462441287881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 2b07439afa75b5045bbd424f26d619d5,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

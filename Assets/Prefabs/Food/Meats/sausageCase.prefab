@@ -327,6 +327,8 @@ GameObject:
   - component: {fileID: 5878430530064479758}
   - component: {fileID: 3228913622029880376}
   - component: {fileID: 9219975369070293185}
+  - component: {fileID: -6583603676797424409}
+  - component: {fileID: 1451265142893691498}
   m_Layer: 0
   m_Name: sausageCase
   m_TagString: Untagged
@@ -399,3 +401,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &-6583603676797424409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480259847852327965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.15674, y: 0.33037686, z: 2.0794375}
+  m_Center: {x: 0, y: 0.18344152, z: 0}
+--- !u!114 &1451265142893691498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480259847852327965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: 5fe774e93323ee44dac294329a79935f,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1056026095174774595}
   - component: {fileID: 8357771184441415029}
   - component: {fileID: 2359971928773208460}
+  - component: {fileID: 7822886002087610258}
+  - component: {fileID: -5791666425861841311}
   m_Layer: 0
   m_Name: watermelon
   m_TagString: Untagged
@@ -79,3 +81,35 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &7822886002087610258
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4106328465210973520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.06156536
+  m_Height: 0.1430811
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.07154055, z: 0}
+--- !u!114 &-5791666425861841311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4106328465210973520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda9be8f80894624baa7ebdab63ef78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodScriptableObject: {fileID: 11400000, guid: e5c7567e9b1e1bc4998d79b630df3ee8,
+    type: 2}
+  speed: 0.25
+  distanceFromPlayer: 0.3
+  playerTransform: {fileID: 0}
+  moving: 1

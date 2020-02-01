@@ -10,6 +10,7 @@ public class sFood : ScriptableObject
     [SerializeField] private List<FoodCategory> foodCategories = new List<FoodCategory>();
     [SerializeField] private string foodName = "New Food";
     [SerializeField] private int pointValue = 0;
+    [SerializeField] private int staminaCost = 0;
     
     enum FoodCategory
     {
