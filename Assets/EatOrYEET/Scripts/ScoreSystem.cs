@@ -9,6 +9,7 @@ public class ScoreSystem : MonoBehaviour
     private int _currentScore;
     private float _globalScoreMultiplierBonus;
     private Dictionary<sFood.FoodCategory, float> _foodCategoryMultiplierBonus;
+    private GameStateController _gameStateController = null;
 
     [SerializeField]
     private GameObject _totalScoreDisplay;
@@ -53,14 +54,27 @@ public class ScoreSystem : MonoBehaviour
             scoreValue *= -1;
         }
 
-        scoreValue += (int)(scoreValue * Math.Min(totalCategoryMultiplierBonuses - 1, 0));
-        scoreValue += (int)(scoreValue * Math.Min(_globalScoreMultiplierBonus - 1, 0));
+        scoreValue += (int)(scoreValue * Math.Max(totalCategoryMultiplierBonuses - 1, 0));
+        scoreValue += (int)(scoreValue * Math.Max(_globalScoreMultiplierBonus - 1, 0));
 
         _currentScore += scoreValue;
 
         // Debugging purposes. Remove when UI is added.
         Debug.Log("ScoreSystem::AdjustScore - Player Score is now: " + _currentScore);
         UpdateTotalScoreDisplay();
+
+        if(_gameStateController != null)
+        {
+            if(_gameStateController.GetScoreToWin() <= _currentScore)
+            {
+                _gameStateController.EndGame();
+            }
+        }
+    }
+
+    public void SetGameStateController(GameStateController gameStateController)
+    {
+        _gameStateController = gameStateController;
     }
 
     public int GetScore()
