@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class ScoreSystem : MonoBehaviour
 {
@@ -52,8 +53,8 @@ public class ScoreSystem : MonoBehaviour
             scoreValue *= -1;
         }
 
-        scoreValue = (int)(scoreValue * (1 + totalCategoryMultiplierBonuses));
-        scoreValue = (int)(scoreValue * (1 + _globalScoreMultiplierBonus));
+        scoreValue += (int)(scoreValue * Math.Min(totalCategoryMultiplierBonuses - 1, 0));
+        scoreValue += (int)(scoreValue * Math.Min(_globalScoreMultiplierBonus - 1, 0));
 
         _currentScore += scoreValue;
 
