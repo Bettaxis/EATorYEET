@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -12,12 +14,10 @@ public class IconGenerator : Editor
     private const string iconGeneratedSuffix = "Icon";
     
     private static readonly Vector2 textureResolution = new Vector2(256, 256);
-    private static readonly List<Object> assetsToGenerateIconsFrom = new List<Object>();
+    private static readonly Dictionary<Object, float> assetsToGenerateIconsFrom = new Dictionary<Object, float>();
     private static readonly string pathToGenerateIconsTo = "Assets/EatOrYEET/Sprites/Icons";
     private static readonly Color backgroundColor = Color.clear;
     
-    private int spawnedObject;
-
     [MenuItem("Adrian Miasik/Fetch Assets")]
     private static void FetchAssets()
     {
@@ -36,20 +36,44 @@ public class IconGenerator : Editor
             if (!IsAssetLabeled(asset, out string[] assetLabels))
                 continue;
             
-            // Iterate through all the labels the asset has...
+            // Iterate through all the labels this asset has...
             foreach (string label in assetLabels)
             {
-                // If that label matches our identifier...
-                if (label == labelIdentifier)
+                if (label.Contains(labelIdentifier))
                 {
-                    // Cache that asset and move on to the next asset path
-                    assetsToGenerateIconsFrom.Add(asset);
-                    break;
+                    // We are assuming this is just an icon with no scalar
+                    if (label.Length == labelIdentifier.Length)
+                    {
+                        // Cache that asset and move on to the next asset path
+                        assetsToGenerateIconsFrom.Add(asset, 1); // 1 is the default scale
+                        break;
+                    }
+                    
+                    // TODO: Improve string cleaning to support multiple cases
+                    assetsToGenerateIconsFrom.Add(asset, float.Parse(ExtractNumbers(label), CultureInfo
+                    .InvariantCulture.NumberFormat)); // Get number on the label and save it as our scalar
                 }
             }
         }
 
         LogFetchedAssets();
+    }
+    
+    private static bool IsAssetLabeled(Object asset, out string[] labels)
+    {
+        labels = AssetDatabase.GetLabels(asset);
+        return labels.Length > 0;
+    }
+
+    private static string ExtractNumbers(string stringToExtractNumbersFrom)
+    {
+        if (string.IsNullOrEmpty(stringToExtractNumbersFrom))
+        {
+            return stringToExtractNumbersFrom;
+        }
+        
+        Regex filter = new Regex(@"[^\d]+");
+        return filter.Replace(stringToExtractNumbersFrom, "");
     }
 
     [MenuItem("Adrian Miasik/Log Fetched Assets")]
@@ -57,9 +81,9 @@ public class IconGenerator : Editor
     {
         Debug.Log("Total Fetched Assets: [" + assetsToGenerateIconsFrom.Count + "].");
 
-        foreach (Object obj in assetsToGenerateIconsFrom)
+        foreach (KeyValuePair<Object, float> obj in assetsToGenerateIconsFrom)
         {
-            Debug.Log(obj.name, obj);
+            Debug.Log(obj.Key.name + " scaled by " + obj.Value, obj.Key);
         }
     }
     
@@ -71,12 +95,6 @@ public class IconGenerator : Editor
         }
         assetsToGenerateIconsFrom.Clear();
     }
-
-    private static bool IsAssetLabeled(Object asset, out string[] labels)
-    {
-        labels = AssetDatabase.GetLabels(asset);
-        return labels.Length > 0;
-    }
     
     [MenuItem("Adrian Miasik/Generate Icons")]
     private static void GenerateIcons()
@@ -85,28 +103,46 @@ public class IconGenerator : Editor
             return;
 
         Directory.CreateDirectory(pathToGenerateIconsTo);
-        
-        for (int i = 0; i < assetsToGenerateIconsFrom.Count; i++)
+
+        // Generate an icon with a specific scale
+        foreach (KeyValuePair<Object, float> asset in assetsToGenerateIconsFrom)
         {
-            GenerateIcon(assetsToGenerateIconsFrom[i]);
+            GenerateIcon(asset);
         }
     }
 
     // TODO: Separation of concerns
-    private static void GenerateIcon(Object asset)
+    /// <summary>
+    /// Generates an icon (using the asset and it's scalar)
+    /// </summary>
+    /// <param name="asset">Key is the actual asset, value is the assets transform scalar</param>
+    private static void GenerateIcon(KeyValuePair<Object, float> asset)
     {
         // Create a scene and load it
-        Scene iconScene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
+        EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
         
-        // Spawn object
-        GameObject spawnedObject = Instantiate(asset, Vector3.zero, Quaternion.Euler(new Vector3(0, 90, -35))) as GameObject;
-        spawnedObject.transform.localScale = Vector3.one * 3;
+        // Spawn objects
+        GameObject spawnedObject = Instantiate(asset.Key, Vector3.down * asset.Value * 2, Quaternion.Euler(new Vector3(0,45,0))) as 
+        GameObject;
+        
+        spawnedObject.transform.localScale = Vector3.one * asset.Value; // Scale asset based on scalar
 
         // Change background
         Camera cam = Camera.main;
         cam.clearFlags = CameraClearFlags.SolidColor;
         cam.backgroundColor = backgroundColor;
-        
+
+        // Look at object
+        Renderer assetRenderer = spawnedObject.GetComponent<Renderer>();
+        if (assetRenderer != null)
+        {
+            cam.transform.LookAt(assetRenderer.bounds.center);
+        }
+        else
+        {
+            cam.transform.LookAt(spawnedObject.transform);
+        }
+
         // Define size
         int iconWidth = (int)textureResolution.x;
         int iconHeight = (int)textureResolution.y;
@@ -125,11 +161,13 @@ public class IconGenerator : Editor
         
         // Create a sprite
         Sprite assetSprite = Sprite.Create(texture, Rect.zero, new Vector2(0.5f, 0.5f));
-        assetSprite.name = asset.name + iconGeneratedSuffix;
+        assetSprite.name = asset.Key.name + iconGeneratedSuffix;
         
         // Create our sprite at location
         string assetPath = pathToGenerateIconsTo + "/" + assetSprite.name + ".png";
         File.WriteAllBytes(assetPath, texture.EncodeToPNG());
+        
+        renderTexture.Release();
     }
 
     [MenuItem("Adrian Miasik/Fetch and Generate Icons")]
