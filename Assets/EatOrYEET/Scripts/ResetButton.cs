@@ -7,7 +7,7 @@ public class ResetButton : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.GetComponent<cYeetHands>() != null)
+        if (other.gameObject.GetComponent<PlayerHands>() != null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
