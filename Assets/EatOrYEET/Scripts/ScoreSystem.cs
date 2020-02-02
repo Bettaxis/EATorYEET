@@ -15,6 +15,8 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField]
     private GameObject _totalScoreDisplay;
 
+    [Header("Multiplier Display Settings")]
+
     // This is the prefab that will spawn all the multiplier displays
     [SerializeField]
     private GameObject _multipliersDisplayPrefab;
@@ -23,6 +25,15 @@ public class ScoreSystem : MonoBehaviour
     // This will allow us to easily change where the displays are spawned
     [SerializeField]
     private GameObject _multipliersDisplayParent;
+
+    [SerializeField]
+    private float _multipliersDisplayHoriontalSpacing = 2.5f;
+
+    [SerializeField]
+    private float _multipliersDisplayVerticalSpacing = 1.5f;
+    
+    [SerializeField]
+    private Transform _playerTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -46,13 +57,18 @@ public class ScoreSystem : MonoBehaviour
     private void SetUpMultipliersDisplay()
     {
         sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
-        float multiplierSpacing = 1.5f;
+        
+        float horizontalMultiplierSpacing = 2.5f;
+        float verticalMultiplierSpacing = 1.5f;
         float numMultipliersSoFar = 0;
-        Vector3 multiplerDisplayBasePosn = _multipliersDisplayParent.transform.position;
         foreach(sFood.FoodCategory category in foodCategories){
-            Vector3 newMultiplierDisplayPosn = multiplerDisplayBasePosn;
-            newMultiplierDisplayPosn.y -= numMultipliersSoFar * multiplierSpacing;
-            GameObject newMultiplierDisplay = Instantiate(_multipliersDisplayPrefab, newMultiplierDisplayPosn, Quaternion.identity, _multipliersDisplayParent.transform);
+            Vector3 newMultiplierDisplayPosn = Vector3.zero;
+            newMultiplierDisplayPosn.y -= (numMultipliersSoFar % 5) * _multipliersDisplayVerticalSpacing;
+            newMultiplierDisplayPosn.x += (numMultipliersSoFar % 2) * _multipliersDisplayHoriontalSpacing;
+            
+            GameObject newMultiplierDisplay = Instantiate(_multipliersDisplayPrefab, Vector3.zero, Quaternion.identity, _multipliersDisplayParent.transform);
+            newMultiplierDisplay.transform.localPosition = newMultiplierDisplayPosn;
+            newMultiplierDisplay.transform.localRotation = Quaternion.identity;
             ++numMultipliersSoFar;
 
             Transform canvasTransform = newMultiplierDisplay.transform.Find("Canvas");
@@ -63,17 +79,24 @@ public class ScoreSystem : MonoBehaviour
 
             Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");
             TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
-            multiplierAmountTextMp.SetText("1");
+            multiplierAmountTextMp.SetText("x1");
 
             _foodCategoryMultiplierDisplays[category] = newMultiplierDisplay;
         }
+
+        if(_playerTransform != null)
+        {
+            _multipliersDisplayParent.transform.LookAt(_playerTransform);
+        }
+        
     }
 
     private void UpdateMultipliersDisplay()
     {
         sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
         foreach(sFood.FoodCategory category in foodCategories){
-            Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
+            GameObject mutiplierDisplay = _foodCategoryMultiplierDisplays[category];
+            Transform canvasTransform = mutiplierDisplay.transform.Find("Canvas");
             Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");
             TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
 
@@ -84,7 +107,7 @@ public class ScoreSystem : MonoBehaviour
                 multiplierAmount = 1f;
             }
 
-            multiplierAmountTextMp.SetText("" + multiplierAmount);
+            multiplierAmountTextMp.SetText("x" + multiplierAmount);
         }
     }
 
