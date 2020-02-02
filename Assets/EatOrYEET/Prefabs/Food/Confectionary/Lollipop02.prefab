@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8613301553849688908}
   - component: {fileID: 780141569730206074}
   - component: {fileID: 6480424728208287107}
-  - component: {fileID: 1633522757673702447}
   - component: {fileID: 5452419656616837642}
   - component: {fileID: -4062101047194332350}
+  - component: {fileID: 4489602226692846657}
   m_Layer: 0
   m_Name: Lollipop02
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4743348104169853279}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4743348104169853279}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1633522757673702447
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4743348104169853279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 419793116934892759, guid: 14d3387ed7853a14b81139c0e96175d9, type: 3}
 --- !u!114 &5452419656616837642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodScriptableObject: {fileID: 11400000, guid: c7929f4f865d6924dbe51b7f7415abd0,
     type: 2}
-  speed: 0.25
-  distanceFromPlayer: 0.3
-  playerTransform: {fileID: 0}
-  moving: 1
 --- !u!54 &-4062101047194332350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,4 +111,18 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!136 &4489602226692846657
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743348104169853279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.48905504
+  m_Height: 1.6245244
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8122622, z: 0}

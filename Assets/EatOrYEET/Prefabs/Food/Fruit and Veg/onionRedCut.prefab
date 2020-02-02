@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4865876558649194232}
   - component: {fileID: 4529519840932678862}
   - component: {fileID: 7917503136064581687}
-  - component: {fileID: -4856540603659030748}
   - component: {fileID: 4056311314630611062}
   - component: {fileID: 3244764518662080134}
+  - component: {fileID: 5596083096928815881}
   m_Layer: 0
   m_Name: onionRedCut
   m_TagString: Untagged
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8492743450519241963}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4856540603659030748
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8492743450519241963}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8601646821875916898, guid: 14122290ea51cc4428ad793c4c60d345, type: 3}
 --- !u!114 &4056311314630611062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodScriptableObject: {fileID: 11400000, guid: 9c61587dd83529747b3242235f536736,
     type: 2}
-  speed: 0.25
-  distanceFromPlayer: 0.3
-  playerTransform: {fileID: 0}
-  moving: 1
 --- !u!54 &3244764518662080134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,4 +111,17 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!65 &5596083096928815881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492743450519241963}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07952189, y: 0.08165094, z: 0.039760944}
+  m_Center: {x: 0, y: 0.04082547, z: -0.019880472}

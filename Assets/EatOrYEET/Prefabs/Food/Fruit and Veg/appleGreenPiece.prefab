@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3227969717919695340}
   - component: {fileID: 5879180912580459482}
   - component: {fileID: 192390960931833635}
-  - component: {fileID: -4146371435838485357}
   - component: {fileID: -6898698973749558861}
   - component: {fileID: 4359064558245579189}
+  - component: {fileID: 5303092518755896963}
   m_Layer: 0
   m_Name: appleGreenPiece
   m_TagString: Untagged
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916093092143084543}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4146371435838485357
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916093092143084543}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3506077208258379195, guid: ad9d069b7d285e64094f96d8d3a7a02a, type: 3}
 --- !u!114 &-6898698973749558861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodScriptableObject: {fileID: 11400000, guid: 74751f73469d421478bb83e378aba03f,
     type: 2}
-  speed: 0.25
-  distanceFromPlayer: 0.3
-  playerTransform: {fileID: 0}
-  moving: 1
 --- !u!54 &4359064558245579189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,4 +111,17 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!65 &5303092518755896963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916093092143084543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.048276503, y: 0.057586525, z: 0.045210037}
+  m_Center: {x: -0.0018344652, y: 0.028793262, z: 0}

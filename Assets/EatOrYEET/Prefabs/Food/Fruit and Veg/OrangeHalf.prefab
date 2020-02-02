@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1955221347442240224}
   - component: {fileID: 7384023000015769814}
   - component: {fileID: 3838712441618492463}
-  - component: {fileID: -6262393257934561852}
   - component: {fileID: 8692628226357855586}
   - component: {fileID: -8280835320231329329}
+  - component: {fileID: 230865392554176071}
   m_Layer: 0
   m_Name: OrangeHalf
   m_TagString: Untagged
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3276666336324409587}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-6262393257934561852
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3276666336324409587}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6946495644212190576, guid: 31251a78eb87ee1449914ed4790e9363, type: 3}
 --- !u!114 &8692628226357855586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodScriptableObject: {fileID: 11400000, guid: 4932a9a2ff1cda649a0d2d1440095b3f,
     type: 2}
-  speed: 0.25
-  distanceFromPlayer: 0.3
-  playerTransform: {fileID: 0}
-  moving: 1
 --- !u!54 &-8280835320231329329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,4 +111,17 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!65 &230865392554176071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276666336324409587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1145574, y: 0.11375537, z: 0.0572787}
+  m_Center: {x: 0, y: 0.056877684, z: -0.02863935}

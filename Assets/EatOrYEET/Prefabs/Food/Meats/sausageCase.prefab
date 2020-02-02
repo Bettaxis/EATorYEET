@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 7480259847852327965}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 7527064324027982445}
   - {fileID: 1345975537500515500}
@@ -429,10 +429,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodScriptableObject: {fileID: 11400000, guid: 5fe774e93323ee44dac294329a79935f,
     type: 2}
-  speed: 0.25
-  distanceFromPlayer: 0.3
-  playerTransform: {fileID: 0}
-  moving: 1
 --- !u!54 &-4487698280035192247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -448,4 +444,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
