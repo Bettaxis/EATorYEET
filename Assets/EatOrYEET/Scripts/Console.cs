@@ -36,6 +36,7 @@ public class Console : MonoBehaviour
     public void CreateLog(string message)
     {
         ConsoleLog log = Instantiate(consoleLogPrefab, content);
+        log.transform.SetSiblingIndex(0);
         log.Initialize(null, message);
         logs.Enqueue(log);
     }
@@ -43,6 +44,7 @@ public class Console : MonoBehaviour
     public void CreateLog(Sprite _sprite, String _message)
     {
         ConsoleLog log = Instantiate(consoleLogPrefab, content);
+        log.transform.SetSiblingIndex(0);
         log.Initialize(_sprite, _message);
         logs.Enqueue(log);        
     }
