@@ -177,8 +177,11 @@ public class ScoreSystem : MonoBehaviour
     private IEnumerator TemporaryGlobalScoreMultiplier(float multiplier, float duration)
     {
         _globalScoreMultiplierBonus += multiplier;
+        UpdateMultipliersDisplay();
+
         yield return new WaitForSeconds(duration);
         _globalScoreMultiplierBonus -= multiplier;
+        UpdateMultipliersDisplay();
 
         yield return null;
     }
@@ -205,8 +208,11 @@ public class ScoreSystem : MonoBehaviour
     private IEnumerator TemporaryCategoryScoreMultiplier(float multiplier, float duration, sFood.FoodCategory foodCategory)
     {
         _foodCategoryMultiplierBonus[foodCategory] += multiplier;
+        UpdateMultipliersDisplay();
+
         yield return new WaitForSeconds(duration);
         _foodCategoryMultiplierBonus[foodCategory] -= multiplier;
+        UpdateMultipliersDisplay();
 
         yield return null;
     }
