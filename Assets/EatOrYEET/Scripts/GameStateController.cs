@@ -119,7 +119,7 @@ public class GameStateController : MonoBehaviour
             food.gameObject.SetActive(false);
         }
 
-        cFoodSpawner[] foodThings = null;
+        cFoodSpawner[] foodSpawners = null;
 
         foodSpawners = FindObjectsOfType<cFoodSpawner>();
 
