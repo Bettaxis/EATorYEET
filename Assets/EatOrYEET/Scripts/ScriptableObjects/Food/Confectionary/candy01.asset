@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Candy
   _pointValue: 100
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
-  _foodColour: {r: 0.96470594, g: 0.40784317, b: 0.9960785, a: 1}
+  _foodSprite: {fileID: 21300000, guid: 72ed0b5d87d769b48935ba8af3283a90, type: 3}
+  _foodColour: {r: 0, g: 0, b: 0, a: 0}
