@@ -2358,29 +2358,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7311204226333170144, guid: 3a5ab85f31f58e4478624a19598c4b68,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7311204226333170144, guid: 3a5ab85f31f58e4478624a19598c4b68,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7311204226333170144, guid: 3a5ab85f31f58e4478624a19598c4b68,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7311204226333170147, guid: 3a5ab85f31f58e4478624a19598c4b68,
         type: 3}
       propertyPath: m_Name
       value: OculusFinalIKGuy
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8669376944815422568, guid: 3a5ab85f31f58e4478624a19598c4b68, type: 3}
-    - {fileID: 933969574, guid: 3a5ab85f31f58e4478624a19598c4b68, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a5ab85f31f58e4478624a19598c4b68, type: 3}
 --- !u!1001 &795509988
 PrefabInstance:
