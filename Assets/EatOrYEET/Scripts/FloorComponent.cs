@@ -17,16 +17,16 @@ public class FloorComponent : MonoBehaviour
                 Debug.Log("FloorComponent made a sound!");
             }
 
-            Destroy(other);
-
             if(_scoreSystem != null)
             {
-                _scoreSystem.AddScore(-1);
+                _scoreSystem.AdjustScore(other.gameObject.GetComponent<FoodItem>(), false);
             }
             else 
             {
                 Debug.Log("Score System was not assigned to Floor. Score is not tracked");
             }
+            
+            Destroy(other.gameObject);
         }   
     }
 }
