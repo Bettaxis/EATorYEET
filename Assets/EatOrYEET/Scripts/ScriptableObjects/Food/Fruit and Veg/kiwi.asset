@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Kiwi
   _pointValue: 100
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: e9aa543971833e940ac5a6238c6e3333, type: 3}
   _foodColour: {r: 0.9960785, g: 0.8470589, b: 0.36078432, a: 1}

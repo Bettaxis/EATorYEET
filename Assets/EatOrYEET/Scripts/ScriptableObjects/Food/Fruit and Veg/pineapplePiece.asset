@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Pineapple Piece
   _pointValue: 100
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 8881faefe7bf01e46adc89ecfece7885, type: 3}
   _foodColour: {r: 0.9686275, g: 0.9215687, b: 0.0627451, a: 1}
