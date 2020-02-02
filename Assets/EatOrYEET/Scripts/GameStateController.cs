@@ -118,5 +118,13 @@ public class GameStateController : MonoBehaviour
         foreach(FoodItem food in foodThings){
             food.gameObject.SetActive(false);
         }
+
+        cFoodSpawner[] foodThings = null;
+
+        foodSpawners = FindObjectsOfType<cFoodSpawner>();
+
+        foreach(cFoodSpawner foodSpawner in foodSpawners){
+            foodSpawner.gameObject.SetActive(false);
+        }
     }
 }
