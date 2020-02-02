@@ -96,10 +96,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodScriptableObject: {fileID: 11400000, guid: f897cbb6644c66541a36ed3d9a0b29b9,
     type: 2}
-  speed: 0.25
-  distanceFromPlayer: 0.3
-  playerTransform: {fileID: 0}
-  moving: 1
 --- !u!54 &1469141318349706647
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,7 +111,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &-2155880531870617929
 BoxCollider:
   m_ObjectHideFlags: 0
