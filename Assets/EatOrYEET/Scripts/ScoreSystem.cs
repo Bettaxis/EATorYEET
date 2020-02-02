@@ -14,6 +14,15 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField]
     private GameObject _totalScoreDisplay;
 
+    // This is the prefab that will spawn all the multiplier displays
+    [SerializeField]
+    private GameObject _multipliersDisplayPrefab;
+
+    // This is an object which will be the parent of the multiplier displays
+    // This will allow us to easily change where the displays are spawned
+    [SerializeField]
+    private GameObject _multipliersDisplayParent;
+
     // Start is called before the first frame update
     void Start()
     {
