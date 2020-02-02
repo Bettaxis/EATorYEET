@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
   m_Name: fish
   m_EditorClassIdentifier: 
-  foodCategories: 08000000
-  foodName: Fish
-  pointValue: 400
+  _foodCategories: 08000000
+  _foodName: Fish
+  _pointValue: 400
+  _staminaCost: 0
+  _foodSprite: {fileID: 0}
+  _foodColour: {r: 0.90196085, g: 0.8862746, b: 0.90196085, a: 1}

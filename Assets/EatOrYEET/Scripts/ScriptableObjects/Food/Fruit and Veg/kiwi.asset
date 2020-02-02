@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
   m_Name: kiwi
   m_EditorClassIdentifier: 
-  foodCategories: 02000000
-  foodName: Kiwi
-  pointValue: 100
+  _foodCategories: 02000000
+  _foodName: Kiwi
+  _pointValue: 100
+  _staminaCost: 0
+  _foodSprite: {fileID: 0}
+  _foodColour: {r: 0.9960785, g: 0.8470589, b: 0.36078432, a: 1}

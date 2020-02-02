@@ -12,12 +12,16 @@ public class PlayAudioSoundsList : MonoBehaviour
 
     AudioSource audioSource;
     private int soundPlayIndex;
-    private System.Random rng;
+    private Random rng;
+
+    public float minPitch = 0.1f;
+    public float maxPitch = 1.5f;
+    public float minVolume = .5f;
+    public float maxVolume = 1.2f;
 
     void Start()
     {
         soundPlayIndex = 0;
-        rng = new System.Random();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -25,13 +29,15 @@ public class PlayAudioSoundsList : MonoBehaviour
     {
         if(isRandomSound)
         {
-            soundPlayIndex = rng.Next(audioSounds.Length);
+            soundPlayIndex = (int)Random.Range(-1, audioSounds.Length);
         }
         else
         {
             soundPlayIndex = (soundPlayIndex + 1) % audioSounds.Length;
         }
 
+        audioSource.pitch = Random.Range(minPitch, maxPitch);
+        audioSource.volume = Random.Range(minVolume, maxVolume);
         audioSource.PlayOneShot(audioSounds[soundPlayIndex]);
     }
 }

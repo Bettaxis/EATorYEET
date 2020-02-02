@@ -15,6 +15,12 @@ public class GameStateController : MonoBehaviour
     private GameObject _totalScoreDisplay;
 
     [SerializeField]
+    private GameObject _resetButtonPrefab;
+
+    [SerializeField]
+    private Vector3 _resetButtonPosn;
+
+    [SerializeField]
     private bool _isTimedGame;
 
     [Header("Timed Game Settings")]
@@ -30,11 +36,11 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         
         if(_totalScoreDisplay != null)
         {
-            DontDestroyOnLoad(_totalScoreDisplay);
+            //DontDestroyOnLoad(_totalScoreDisplay);
         }
         else 
         {
@@ -67,8 +73,16 @@ public class GameStateController : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene(GAME_END_SCENE_NAME);
+        DeactivateAllFood();
 
+        if(_resetButtonPrefab != null)
+        {
+            Instantiate(_resetButtonPrefab, _resetButtonPosn, Quaternion.identity);
+        }
+
+        //SceneManager.LoadScene(GAME_END_SCENE_NAME);
+
+        /*
         if(_totalScoreDisplay != null)
         {
             _totalScoreDisplay.transform.position = new Vector3(0,1f,-8.21f);
@@ -85,6 +99,7 @@ public class GameStateController : MonoBehaviour
         {
             Debug.LogError("ScoreSystem::EndGame - Score display is not assigned to the Score System");
         }
+        */
     }
 
     private IEnumerator EndGameAfterTime(float duration)
@@ -92,5 +107,24 @@ public class GameStateController : MonoBehaviour
         yield return new WaitForSeconds(duration);
         EndGame();
         yield return null;
+    }
+
+    private void DeactivateAllFood()
+    {
+        FoodItem[] foodThings = null;
+
+        foodThings = FindObjectsOfType<FoodItem>();
+
+        foreach(FoodItem food in foodThings){
+            food.gameObject.SetActive(false);
+        }
+
+        cFoodSpawner[] foodSpawners = null;
+
+        foodSpawners = FindObjectsOfType<cFoodSpawner>();
+
+        foreach(cFoodSpawner foodSpawner in foodSpawners){
+            foodSpawner.gameObject.SetActive(false);
+        }
     }
 }
