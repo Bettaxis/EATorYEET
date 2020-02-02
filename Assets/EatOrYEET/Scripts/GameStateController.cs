@@ -10,12 +10,22 @@ public class GameStateController : MonoBehaviour
 
     [SerializeField]
     private ScoreSystem _scoreSystem;
+    
+    [SerializeField]
+    private GameObject _totalScoreDisplay;
 
+    [SerializeField]
+    private bool _isTimedGame;
+
+    [Header("Timed Game Settings")]
     [SerializeField]
     private float _gameDuration;
 
+    [Header("Score Attack Settings")]
     [SerializeField]
-    private GameObject _totalScoreDisplay;
+    private int _scoreToWin;
+
+    private float _timeAtStart = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,34 +38,59 @@ public class GameStateController : MonoBehaviour
         }
         else 
         {
-            Debug.LogError("ScoreSystem::Start - Score display is not assigned to the Score System");
+            Debug.LogError("ScoreSystem::Start - Score display is not assigned to the GameStateController");
         }
 
-        StartCoroutine(EndGameAfterTime(_gameDuration));
+        _timeAtStart = Time.time;
+
+        if(_isTimedGame)
+        {
+            StartCoroutine(EndGameAfterTime(_gameDuration));
+        }
+        else
+        {
+            if(_scoreSystem != null)
+            {
+                _scoreSystem.SetGameStateController(this);
+            }
+            else 
+            {
+                Debug.LogError("ScoreSystem::Start - Score System is not assigned to the GameStateController");
+            }
+        }
     }
 
-    private IEnumerator EndGameAfterTime(float duration)
+    public int GetScoreToWin()
     {
-        yield return new WaitForSeconds(duration);
+        return _scoreToWin;
+    }
 
+    public void EndGame()
+    {
         SceneManager.LoadScene(GAME_END_SCENE_NAME);
 
         if(_totalScoreDisplay != null)
         {
             _totalScoreDisplay.transform.position = new Vector3(0,1f,-8.21f);
-            /*
-            GameObject instance = Instantiate(_totalScoreDisplayPrefab);
-            Transform canvasTransform = instance.transform.Find("Canvas");
-            Transform totalScoreTransform = canvasTransform.Find("Total Score");
-            TextMeshProUGUI totalScoreTextMp = totalScoreTransform.gameObject.GetComponent<TextMeshProUGUI>();
-            totalScoreTextMp.SetText("" + _scoreSystem.GetScore());
-            */
+
+            if(!_isTimedGame)
+            {
+                Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
+                Transform totalScoreTransform = canvasTransform.Find("Total Score");
+                TextMeshProUGUI totalScoreTextMp = totalScoreTransform.gameObject.GetComponent<TextMeshProUGUI>();
+                totalScoreTextMp.SetText("" + (Time.time - _timeAtStart));
+            }
         }
         else 
         {
-            Debug.LogError("ScoreSystem::UpdateTotalScoreDisplay - Score display is not assigned to the Score System");
+            Debug.LogError("ScoreSystem::EndGame - Score display is not assigned to the Score System");
         }
+    }
 
+    private IEnumerator EndGameAfterTime(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        EndGame();
         yield return null;
     }
 }
