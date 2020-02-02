@@ -128,10 +128,14 @@ public class ScoreSystem : MonoBehaviour
         if(_totalScoreDisplay != null)
         {
             Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
-            Transform totalScoreTransform = _totalScoreDisplay.transform.Find("Total Score");
+            Transform totalScoreTransform = canvasTransform.Find("Total Score");
+            /*
+            Debug.Log("ScoreSystem::UpdateTotalScoreDisplay - totalScoreTransform = " + totalScoreTransform);
+            Debug.Log("ScoreSystem::UpdateTotalScoreDisplay - totalScoreTransform.gameObject = " + totalScoreTransform.gameObject);
+            Debug.Log("ScoreSystem::UpdateTotalScoreDisplay - totalScoreTransform.gameObject.GetComponent<TextMeshProUGUI>() = " + totalScoreTransform.gameObject.GetComponent<TextMeshProUGUI>());
+            */
 
-            TextMeshPro totalScoreTextMp = totalScoreTransform.gameObject.GetComponent<TextMeshPro>();
-
+            TextMeshProUGUI totalScoreTextMp = totalScoreTransform.gameObject.GetComponent<TextMeshProUGUI>();
             totalScoreTextMp.SetText("" + _currentScore);
         }
         else 
