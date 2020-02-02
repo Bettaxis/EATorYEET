@@ -25,8 +25,9 @@ public class FloorComponent : MonoBehaviour
             {
                 Debug.Log("Score System was not assigned to Floor. Score is not tracked");
             }
-            
-            Destroy(other.gameObject);
+
+            Debug.Log("FloorComponent::OnTriggerEnter - " + other.gameObject.name + " is deactivated!");
+            other.gameObject.SetActive(false);
         }   
     }
 }
