@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Fish
   _pointValue: 400
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 12d38e37f0c05f2489a8315d3317e1c6, type: 3}
   _foodColour: {r: 0.90196085, g: 0.8862746, b: 0.90196085, a: 1}

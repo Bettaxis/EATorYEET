@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Fried Egg
   _pointValue: 150
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: f5bb62090b6582a4285b189f402ae415, type: 3}
   _foodColour: {r: 0.9960785, g: 0.9960785, b: 0.5176471, a: 1}

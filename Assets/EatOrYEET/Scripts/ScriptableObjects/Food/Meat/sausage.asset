@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Sausage
   _pointValue: 50
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: d801371cf874c4841a498330e17d8924, type: 3}
   _foodColour: {r: 0.9960785, g: 0.3921569, b: 0.18431373, a: 1}

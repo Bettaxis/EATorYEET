@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Bacon
   _pointValue: 100
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: cb0408b4d0de5ea498e27c9c71482283, type: 3}
   _foodColour: {r: 0.9960785, g: 0.5411765, b: 0.3529412, a: 1}
