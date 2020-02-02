@@ -53,8 +53,8 @@ public class ScoreSystem : MonoBehaviour
             scoreValue *= -1;
         }
 
-        scoreValue += (int)(scoreValue * Math.Min(totalCategoryMultiplierBonuses - 1, 0));
-        scoreValue += (int)(scoreValue * Math.Min(_globalScoreMultiplierBonus - 1, 0));
+        scoreValue += (int)(scoreValue * Math.Max(totalCategoryMultiplierBonuses - 1, 0));
+        scoreValue += (int)(scoreValue * Math.Max(_globalScoreMultiplierBonus - 1, 0));
 
         _currentScore += scoreValue;
 
