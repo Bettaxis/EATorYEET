@@ -9,6 +9,7 @@ public class ScoreSystem : MonoBehaviour
     private int _currentScore;
     private float _globalScoreMultiplierBonus;
     private Dictionary<sFood.FoodCategory, float> _foodCategoryMultiplierBonus;
+    private Dictionary<sFood.FoodCategory, GameObject> _foodCategoryMultiplierDisplays;
     private GameStateController _gameStateController = null;
 
     [SerializeField]
@@ -35,6 +36,41 @@ public class ScoreSystem : MonoBehaviour
 
         foreach(sFood.FoodCategory category in foodCategories){
             _foodCategoryMultiplierBonus[category] = 0f;
+        }
+    }
+
+    private void SetUpMultipliersDisplay()
+    {
+        foreach(sFood.FoodCategory category in foodCategories){
+
+
+            Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
+
+            Transform multiplierNameTransform = canvasTransform.Find("Multiplier Name");
+            TextMeshProUGUI multiplierNameTextMp = multiplierNameTransform.gameObject.GetComponent<TextMeshProUGUI>();
+            multiplierNameTextMp.SetText(category.toString());
+
+            Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");
+            TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
+            multiplierAmountTextMp.SetText("1");
+        }
+    }
+
+    private void UpdateMultipliersDisplay()
+    {
+        foreach(sFood.FoodCategory category in foodCategories){
+            Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
+            Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");
+            TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
+
+            float multiplierAmount = _foodCategoryMultiplierBonus[category];
+
+            if(multiplierAmount == 0f)
+            {
+                multiplierAmount = 1f;
+            }
+
+            multiplierAmountTextMp.SetText("" + multiplierAmount);
         }
     }
 
