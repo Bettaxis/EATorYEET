@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4659020560905288035}
   - component: {fileID: 4463960295769834325}
   - component: {fileID: 7984782460183707564}
-  - component: {fileID: -3234166633178290596}
   - component: {fileID: -1289306385734335600}
   - component: {fileID: 3364337926332172271}
+  - component: {fileID: 7415966931083171976}
   m_Layer: 0
   m_Name: eggSunnySideUp
   m_TagString: Untagged
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-3234166633178290596
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8571321350790499184}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3288101775829669375, guid: cda9aa766e9ff7d4dad3b6c9bb361db4, type: 3}
 --- !u!114 &-1289306385734335600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7415966931083171976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8571321350790499184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8220333, y: 0.48218882, z: 1.5324385}
+  m_Center: {x: -0.053522587, y: 0.24109441, z: 0.053457826}

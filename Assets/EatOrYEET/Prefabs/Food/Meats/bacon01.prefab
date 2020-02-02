@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6469889015576451976}
   - component: {fileID: 2635361665309073854}
   - component: {fileID: 8623872201783123271}
-  - component: {fileID: -9067296116403185528}
   - component: {fileID: 5768369776584463564}
   - component: {fileID: -7353634774529153829}
+  - component: {fileID: 7433374715775305951}
   m_Layer: 0
   m_Name: bacon01
   m_TagString: Untagged
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-9067296116403185528
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8039752301586688411}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5948769709226185886, guid: e41d903f43bb60146b4e12338afb3e49, type: 3}
 --- !u!114 &5768369776584463564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7433374715775305951
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8039752301586688411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9783618, y: 0.19999999, z: 0.70289826}
+  m_Center: {x: 0.009935766, y: 0.099999994, z: 0.08735785}

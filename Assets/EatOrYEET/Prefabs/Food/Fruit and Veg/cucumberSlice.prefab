@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1861721612098749711}
   - component: {fileID: 7245499388252880697}
   - component: {fileID: 4013171422516249536}
-  - component: {fileID: -4959195389686648067}
   - component: {fileID: -6746777636101414184}
   - component: {fileID: 2383187415694190527}
+  - component: {fileID: 4789620634104951529}
   m_Layer: 0
   m_Name: cucumberSlice
   m_TagString: Untagged
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3426518216389080860}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4959195389686648067
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3426518216389080860}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2492694230735654677, guid: acc0196adcb003c44982e14848c1bf9e, type: 3}
 --- !u!114 &-6746777636101414184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &4789620634104951529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3426518216389080860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019184306, y: 0.073907994, z: 0.074865885}
+  m_Center: {x: 0.0005307086, y: 0, z: 0.0020100437}
