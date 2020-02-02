@@ -37,27 +37,41 @@ public class ScoreSystem : MonoBehaviour
         foreach(sFood.FoodCategory category in foodCategories){
             _foodCategoryMultiplierBonus[category] = 0f;
         }
+        
+        _foodCategoryMultiplierDisplays = new Dictionary<sFood.FoodCategory, GameObject>();
+
+        SetUpMultipliersDisplay();
     }
 
     private void SetUpMultipliersDisplay()
     {
+        sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
+        float multiplierSpacing = 1.5f;
+        float numMultipliersSoFar = 0;
+        Vector3 multiplerDisplayBasePosn = _multipliersDisplayParent.transform.position;
         foreach(sFood.FoodCategory category in foodCategories){
+            Vector3 newMultiplierDisplayPosn = multiplerDisplayBasePosn;
+            newMultiplierDisplayPosn.y -= numMultipliersSoFar * multiplierSpacing;
+            GameObject newMultiplierDisplay = Instantiate(_multipliersDisplayPrefab, newMultiplierDisplayPosn, Quaternion.identity, _multipliersDisplayParent.transform);
+            ++numMultipliersSoFar;
 
-
-            Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
+            Transform canvasTransform = newMultiplierDisplay.transform.Find("Canvas");
 
             Transform multiplierNameTransform = canvasTransform.Find("Multiplier Name");
             TextMeshProUGUI multiplierNameTextMp = multiplierNameTransform.gameObject.GetComponent<TextMeshProUGUI>();
-            multiplierNameTextMp.SetText(category.toString());
+            multiplierNameTextMp.SetText(category.ToString());
 
             Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");
             TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
             multiplierAmountTextMp.SetText("1");
+
+            _foodCategoryMultiplierDisplays[category] = newMultiplierDisplay;
         }
     }
 
     private void UpdateMultipliersDisplay()
     {
+        sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
         foreach(sFood.FoodCategory category in foodCategories){
             Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
             Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");

@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57efa7a82863dbb4e91257bdbb20f042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _totalScoreDisplay: {fileID: 0}
+  _multipliersDisplayPrefab: {fileID: 4747403112500798244, guid: db9fa66f68a1f1549af2883dae8c3442,
+    type: 3}
+  _multipliersDisplayParent: {fileID: 0}
