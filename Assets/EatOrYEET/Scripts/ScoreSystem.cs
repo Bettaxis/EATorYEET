@@ -31,9 +31,6 @@ public class ScoreSystem : MonoBehaviour
 
     [SerializeField]
     private float _multipliersDisplayVerticalSpacing = 1.5f;
-    
-    [SerializeField]
-    private Transform _playerTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -83,12 +80,6 @@ public class ScoreSystem : MonoBehaviour
 
             _foodCategoryMultiplierDisplays[category] = newMultiplierDisplay;
         }
-
-        if(_playerTransform != null)
-        {
-            _multipliersDisplayParent.transform.LookAt(_playerTransform);
-        }
-        
     }
 
     private void UpdateMultipliersDisplay()
