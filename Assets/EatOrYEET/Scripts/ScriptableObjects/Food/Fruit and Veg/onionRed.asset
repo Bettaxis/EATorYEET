@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
   m_Name: onionRed
   m_EditorClassIdentifier: 
-  foodCategories: 01000000
-  foodName: Red Onion
-  pointValue: 50
+  _foodCategories: 01000000
+  _foodName: Red Onion
+  _pointValue: 50
+  _staminaCost: 0
+  _foodSprite: {fileID: 0}
+  _foodColour: {r: 0.83921576, g: 0.3137255, b: 0.32156864, a: 1}
