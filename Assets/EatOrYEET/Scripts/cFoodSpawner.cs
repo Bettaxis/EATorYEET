@@ -44,7 +44,7 @@ public class cFoodSpawner : MonoBehaviour
             int index = (int)Random.Range(-1, prefabs.Count);
             GameObject prefab = prefabs[index];
             FoodItem foodItem = prefab.GetComponent<FoodItem>();
-            foodItem.playerTransform = playerTransform;
+            //foodItem.playerTransform = playerTransform;
             GameObject go = Instantiate(prefab, transform.position, Quaternion.identity);
 
             pool.Add(go);
@@ -76,7 +76,7 @@ public class cFoodSpawner : MonoBehaviour
             int index = (int)Random.Range(-1, prefabs.Count);
             GameObject prefab = prefabs[index];
             FoodItem foodItem = prefab.GetComponent<FoodItem>();
-            foodItem.playerTransform = playerTransform;
+            //foodItem.playerTransform = playerTransform;
             GameObject newGo = Instantiate(prefab, transform.position, Quaternion.identity);
 
             pool.Add(newGo);
