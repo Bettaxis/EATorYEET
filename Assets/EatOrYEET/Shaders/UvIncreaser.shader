@@ -1,4 +1,4 @@
-﻿Shader "Unlit/ConveyerBelt"
+﻿Shader "Unlit/UVIncreaser"
 {
     Properties
     {
