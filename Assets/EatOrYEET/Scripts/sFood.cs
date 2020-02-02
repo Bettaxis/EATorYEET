@@ -24,6 +24,9 @@ public class sFood : ScriptableObject
     [SerializeField]
     [FormerlySerializedAs("staminaCost")]
     private int _staminaCost = 0;
+
+    [SerializeField]
+    private Sprite _foodSprite = null;
     
 
     public List<FoodCategory> foodCategories
