@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4452405709859390280}
   - component: {fileID: 9213415704095243220}
   - component: {fileID: 369548705646746701}
+  - component: {fileID: 4756681957118334657}
   m_Layer: 0
   m_Name: burger
   m_TagString: Untagged
@@ -52,10 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodScriptableObject: {fileID: 11400000, guid: f803952ea9b666c4dacffc433acd9404,
     type: 2}
-  speed: 0.25
-  distanceFromPlayer: 0.3
-  playerTransform: {fileID: 0}
-  moving: 1
 --- !u!54 &369548705646746701
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -71,7 +68,20 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!65 &4756681957118334657
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833525195741458779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.972687, y: 1.8673838, z: 2.0154738}
+  m_Center: {x: 0, y: 0.9361396, z: 0.00000018626451}
 --- !u!1 &1830038489379795348
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +93,6 @@ GameObject:
   - component: {fileID: 40816115574798130}
   - component: {fileID: 4009138349122603433}
   - component: {fileID: 1055107844476584059}
-  - component: {fileID: 5498059409606010611}
   m_Layer: 0
   m_Name: bunTop
   m_TagString: Untagged
@@ -152,20 +161,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5498059409606010611
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830038489379795348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3566943513173903112, guid: 8cf55ebdc17862949b9c03f8f2b6a58e, type: 3}
 --- !u!1 &3010259723924581189
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +172,6 @@ GameObject:
   - component: {fileID: 7898611465370866755}
   - component: {fileID: 6427916236607088693}
   - component: {fileID: 6296837191201461009}
-  - component: {fileID: 5494233457892878057}
   m_Layer: 0
   m_Name: tomato
   m_TagString: Untagged
@@ -246,19 +240,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5494233457892878057
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3010259723924581189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9826437, y: 0.18277326, z: 1.885625}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5751288992365066365
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +251,6 @@ GameObject:
   - component: {fileID: 4585247439635377214}
   - component: {fileID: 4356142320540025094}
   - component: {fileID: 6697714942283720247}
-  - component: {fileID: 6534332351855734668}
   m_Layer: 0
   m_Name: patty
   m_TagString: Untagged
@@ -339,19 +319,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6534332351855734668
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5751288992365066365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.866, y: 0.33431065, z: 1.866}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5860580127821247217
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +330,6 @@ GameObject:
   - component: {fileID: 5577714698865577496}
   - component: {fileID: 8187965301917967235}
   - component: {fileID: 2147112030302591084}
-  - component: {fileID: 5763289836730854466}
   m_Layer: 0
   m_Name: cheese
   m_TagString: Untagged
@@ -432,19 +398,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5763289836730854466
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5860580127821247217}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8726332, y: 0.2310347, z: 1.8736367}
-  m_Center: {x: -7.275958e-12, y: 0, z: -2.910383e-11}
 --- !u!1 &6727064644208476131
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +409,6 @@ GameObject:
   - component: {fileID: 3241465377917804254}
   - component: {fileID: 4114491513059400815}
   - component: {fileID: 6611530331575733644}
-  - component: {fileID: 5198585767960521142}
   m_Layer: 0
   m_Name: bunBase
   m_TagString: Untagged
@@ -525,20 +477,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5198585767960521142
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6727064644208476131}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7059640959806215513, guid: 8cf55ebdc17862949b9c03f8f2b6a58e, type: 3}
 --- !u!1 &7887984359496037411
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +488,6 @@ GameObject:
   - component: {fileID: 5128164618498029423}
   - component: {fileID: 109868537289101911}
   - component: {fileID: 3448632882168266490}
-  - component: {fileID: 1954674821447824141}
   m_Layer: 0
   m_Name: lettuce
   m_TagString: Untagged
@@ -619,16 +556,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1954674821447824141
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7887984359496037411}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.246908, y: 0.13834862, z: 2.4752002}
-  m_Center: {x: -4.3655746e-11, y: 0, z: 0.0000000018626451}
