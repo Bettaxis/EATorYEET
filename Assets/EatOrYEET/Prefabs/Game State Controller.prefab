@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreSystem: {fileID: 0}
-  _gameDuration: 120
   _totalScoreDisplay: {fileID: 0}
+  _resetButtonPrefab: {fileID: 7500868955764054712, guid: 8422a9481aa776c4f8c67c623ab8cae7,
+    type: 3}
+  _resetButtonPosn: {x: 0, y: 0, z: 0}
+  _isTimedGame: 1
+  _gameDuration: 60
+  _scoreToWin: 0
