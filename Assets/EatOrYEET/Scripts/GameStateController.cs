@@ -74,7 +74,6 @@ public class GameStateController : MonoBehaviour
     public void EndGame()
     {
         DeactivateAllFood();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         if(_resetButtonPrefab != null)
         {
