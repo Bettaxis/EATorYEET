@@ -10,8 +10,9 @@ public class cExtendOHands : MonoBehaviour
 {
     [SerializeField] private OVRInput.Controller controller;
     [SerializeField] private Transform startPos; 
-    [SerializeField] private Transform forwardPos; 
+    [SerializeField] private Transform forwardPos;
 
+    private bool isLerping;
 
     void Update()
     {
@@ -25,8 +26,6 @@ public class cExtendOHands : MonoBehaviour
         {
             MoveHandsBack();
         }
-
-
     }
 
     void MoveHandsForward()
