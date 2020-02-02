@@ -10,6 +10,9 @@ public class FoodHoleSounds : MonoBehaviour
     [SerializeField]
     private Console _console;
 
+    [SerializeField]
+    private RandomEventsCreator _randomEventsCreator;
+
     private void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.GetComponent<FoodItem>() != null)
@@ -39,6 +42,15 @@ public class FoodHoleSounds : MonoBehaviour
             else 
             {
                 Debug.Log("Console was not assigned to Food Hole. Items are not displayed on the terminal");
+            }
+
+            if(_randomEventsCreator != null)
+            {
+                _randomEventsCreator.IndicateFoodEaten(foodObj);
+            }
+            else 
+            {
+                Debug.Log("RandomEventsCreator was not assigned to Food Hole. No Combo system");
             }
 
             Debug.Log("FoodHoleSounds::OnTriggerEnter - " + other.gameObject.name + " is deactivated!");

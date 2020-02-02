@@ -188,17 +188,32 @@ public class ScoreSystem : MonoBehaviour
 
     // multiplier is the value by which to multiply the score
     // duration is the number of seconds to set the multiplier for
-    public void SetCategoryMultiplier(float multiplier, float duration, sFood.FoodCategory foodCategory)
+    public void SetCategoryPermanentMultiplier(float multiplier, sFood.FoodCategory foodCategory)
     {
         if(multiplier == 0)
         {
-            Debug.LogError("ScoreSystem::SetCategoryMultiplier - multiplier should not be 0!");
+            Debug.LogError("ScoreSystem::SetCategoryPermanentMultiplier - multiplier should not be 0!");
+            return;
+        }
+
+        _foodCategoryMultiplierBonus[foodCategory] = multiplier;
+
+        UpdateMultipliersDisplay();
+    }
+
+    // multiplier is the value by which to multiply the score
+    // duration is the number of seconds to set the multiplier for
+    public void SetCategoryTemporaryMultiplier(float multiplier, float duration, sFood.FoodCategory foodCategory)
+    {
+        if(multiplier == 0)
+        {
+            Debug.LogError("ScoreSystem::SetCategoryTemporaryMultiplier - multiplier should not be 0!");
             return;
         }
 
         if(duration <= 0)
         {
-            Debug.LogError("ScoreSystem::SetCategoryMultiplier - duration should be greater than 0!");
+            Debug.LogError("ScoreSystem::SetCategoryTemporaryMultiplier - duration should be greater than 0!");
             return;
         }
 
