@@ -61,6 +61,13 @@ public class sFood : ScriptableObject
         }
     }
 
+    public Sprite foodSprite
+    {
+        get
+        {
+            return _foodSprite;
+        }
+    }
 
     public enum FoodCategory
     {
