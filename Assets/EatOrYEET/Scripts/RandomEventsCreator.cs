@@ -8,15 +8,65 @@ public class RandomEventsCreator : MonoBehaviour
     private ScoreSystem _scoreSystem;
 
     [SerializeField]
+    private bool _isRandomEvents = false;
+
+    [Header("Random Multiplier Events Settings")]
+    [SerializeField]
     private float _eventFrequency;
+
+    [Header("Combo Events Settings")]
+    [SerializeField]
+    private float _numForCombo = 5;
 
     [SerializeField]
     private int _maxMultiplier = 5;
 
+    private Dictionary<sFood.FoodCategory, int> _foodCategoryComboCounts;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(CreateRandomEvent());
+        if(_isRandomEvents)
+        {
+            StartCoroutine(CreateRandomEvent());
+        }
+
+        _foodCategoryComboCounts = new Dictionary<sFood.FoodCategory, int>();
+        sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
+
+        foreach(sFood.FoodCategory category in foodCategories)
+        {
+            _foodCategoryComboCounts[category] = 0;
+        }
+    }
+
+    public void IndicateFoodEaten(FoodItem food)
+    {
+        if(_isRandomEvents)
+        {
+            return;
+        }
+
+        List<sFood.FoodCategory> typesOfEatenFood = food.foodScriptableObject.foodCategories;
+
+        sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
+        foreach(sFood.FoodCategory category in foodCategories)
+        {
+            if(typesOfEatenFood.Contains(category))
+            {
+                _foodCategoryComboCounts[category] += 1;
+
+                if(_foodCategoryComboCounts[category] >= _numForCombo)
+                {
+                    _scoreSystem.SetCategoryPermanentMultiplier((int)(_foodCategoryComboCounts[category]/_numForCombo), category);
+                }
+            }
+            else
+            {
+                _foodCategoryComboCounts[category] = 0;
+                _scoreSystem.SetCategoryPermanentMultiplier(1, category);
+            }
+        }
     }
 
     private IEnumerator CreateRandomEvent()
@@ -26,7 +76,7 @@ public class RandomEventsCreator : MonoBehaviour
             yield return new WaitForSeconds(_eventFrequency);
             System.Random rng = new System.Random();
             int multiplierBonus = rng.Next(_maxMultiplier - 1) + 1;
-            _scoreSystem.SetCategoryMultiplier(multiplierBonus, _eventFrequency, GetRandomFoodCategory());
+            _scoreSystem.SetCategoryTemporaryMultiplier(multiplierBonus, _eventFrequency, GetRandomFoodCategory());
         }
         
         yield return null;

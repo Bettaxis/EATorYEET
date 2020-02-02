@@ -164,8 +164,13 @@ QualitySettings:
     shadowmaskMode: 1
     skinWeights: 4
     textureQuality: 0
+<<<<<<< HEAD
     anisotropicTextures: 1
     antiAliasing: 0
+=======
+    anisotropicTextures: 2
+    antiAliasing: 2
+>>>>>>> master
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -193,14 +198,24 @@ QualitySettings:
     shadowResolution: 2
     shadowProjection: 1
     shadowCascades: 4
+<<<<<<< HEAD
     shadowDistance: 35
+=======
+    shadowDistance: 150
+>>>>>>> master
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 1
+<<<<<<< HEAD
     skinWeights: 4
     textureQuality: 0
     anisotropicTextures: 1
+=======
+    skinWeights: 255
+    textureQuality: 0
+    anisotropicTextures: 2
+>>>>>>> master
     antiAliasing: 0
     softParticles: 1
     softVegetation: 1
@@ -220,6 +235,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+<<<<<<< HEAD
     customRenderPipeline: {fileID: 11400000, guid: 1b4c53f74be02364e901c21166c00d4f,
       type: 2}
     excludedTargetPlatforms: []
@@ -234,6 +250,18 @@ QualitySettings:
     Tizen: 2
     WebGL: 3
     WiiU: 5
+=======
+    customRenderPipeline: {fileID: 0}
+    excludedTargetPlatforms: []
+  m_PerPlatformDefaultQuality:
+    Android: 2
+    Lumin: 5
+    Nintendo Switch: 5
+    PS4: 5
+    Stadia: 5
+    Standalone: 5
+    WebGL: 3
+>>>>>>> master
     Windows Store Apps: 5
     XboxOne: 5
     iPhone: 2
