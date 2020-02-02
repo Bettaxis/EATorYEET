@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Chicken Nuggets
   _pointValue: 200
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: a66e87a95fe49e34180054a9290934a7, type: 3}
   _foodColour: {r: 0.9960785, g: 0.47058827, b: 0.32156864, a: 1}
