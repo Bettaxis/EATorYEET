@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreSystem : MonoBehaviour
 {
     private int _currentScore;
     private float _globalScoreMultiplierBonus;
     private Dictionary<sFood.FoodCategory, float> _foodCategoryMultiplierBonus;
+
+    [SerializeField]
+    private GameObject _totalScoreDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +59,7 @@ public class ScoreSystem : MonoBehaviour
 
         // Debugging purposes. Remove when UI is added.
         Debug.Log("ScoreSystem::AdjustScore - Player Score is now: " + _currentScore);
+        UpdateTotalScoreDisplay();
     }
 
     public int GetScore()
@@ -116,5 +121,22 @@ public class ScoreSystem : MonoBehaviour
         _foodCategoryMultiplierBonus[foodCategory] -= multiplier;
 
         yield return null;
+    }
+
+    private void UpdateTotalScoreDisplay()
+    {
+        if(_totalScoreDisplay != null)
+        {
+            Transform canvasTransform = _totalScoreDisplay.transform.Find("Canvas");
+            Transform totalScoreTransform = _totalScoreDisplay.transform.Find("Total Score");
+
+            TextMeshPro totalScoreTextMp = totalScoreTransform.gameObject.GetComponent<TextMeshPro>();
+
+            totalScoreTextMp.SetText("" + _currentScore);
+        }
+        else 
+        {
+            Debug.LogError("ScoreSystem::UpdateTotalScoreDisplay - Score display is not assigned to the Score System");
+        }
     }
 }
