@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class MunchParticles : MonoBehaviour
 {
-    [SerializeField] private Color particleColour;
-    private ParticleSystem munchParticleSystem;
-    void Start()
-    {
-        munchParticleSystem = gameObject.GetComponent<ParticleSystem>();
-    }
+    private Color particleColour;
+    [SerializeField] private ParticleSystem munchParticleSystem;
+    private void OnTriggerEnter(Collider other) {
 
-    /*
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(other.gameObject.GetComponent<FoodItem>() != null){
+            particleColour = other.gameObject.GetComponent<FoodItem>().foodScriptableObject.foodColour;
             fireParticles();
         }
+        else
+        {
+            return;
+        }
     }
-    */
-
     public void fireParticles(){
+        var main = munchParticleSystem.main;  
+        main.startColor = particleColour;
         munchParticleSystem.Play();
     }
 }

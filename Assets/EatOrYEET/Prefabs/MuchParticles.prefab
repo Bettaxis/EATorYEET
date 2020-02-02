@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1360377064458140214}
   - component: {fileID: 1099235518016709515}
   - component: {fileID: 3866029203661043099}
-  - component: {fileID: 8577118073237137917}
   m_Layer: 0
   m_Name: MuchParticles
   m_TagString: Untagged
@@ -4813,15 +4812,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &8577118073237137917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720657986082312101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 533cdf1dc70971149a1a38a1a33af3e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

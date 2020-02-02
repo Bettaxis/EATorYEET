@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
   m_Name: lollipop03
   m_EditorClassIdentifier: 
-  foodPrefabs: []
-  foodCategories: 04000000
-  foodName: Rainbow Lollipop
-  pointValue: 600
+  _foodCategories: 04000000
+  _foodName: Rainbow Lollipop
+  _pointValue: 600
+  _staminaCost: 0
+  _foodSprite: {fileID: 0}
+  _foodColour: {r: 0.9960785, g: 0.9960785, b: 0.121568635, a: 1}
