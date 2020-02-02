@@ -27,6 +27,9 @@ public class sFood : ScriptableObject
 
     [SerializeField]
     private Sprite _foodSprite = null;
+
+    [SerializeField]
+    private Color _foodColour; //This is used to tell the munch Particle system what colour to make the particles
     
 
     public List<FoodCategory> foodCategories
@@ -66,6 +69,14 @@ public class sFood : ScriptableObject
         get
         {
             return _foodSprite;
+        }
+    }
+
+    public Color foodColour
+    {
+        get
+        {
+            return _foodColour;
         }
     }
 

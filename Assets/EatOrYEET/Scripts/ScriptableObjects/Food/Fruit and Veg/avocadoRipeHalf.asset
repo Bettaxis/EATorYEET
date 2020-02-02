@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
   m_Name: avocadoRipeHalf
   m_EditorClassIdentifier: 
-  foodCategories: 01000000
-  foodName: Ripe Avocado Half
-  pointValue: 125
+  _foodCategories: 01000000
+  _foodName: Ripe Avocado Half
+  _pointValue: 125
+  _staminaCost: 0
+  _foodSprite: {fileID: 0}
+  _foodColour: {r: 1, g: 1, b: 1, a: 1}

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07cf92bd277f349b6c4f28c87e952b, type: 3}
   m_Name: CupCola
   m_EditorClassIdentifier: 
-  foodCategories: 06000000
-  foodName: Soda
-  pointValue: 50
+  _foodCategories: 06000000
+  _foodName: Soda
+  _pointValue: 50
+  _staminaCost: 0
+  _foodSprite: {fileID: 0}
+  _foodColour: {r: 0.77647066, g: 0.09019608, b: 0, a: 1}
