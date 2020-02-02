@@ -39,4 +39,11 @@ public class Console : MonoBehaviour
         log.Initialize(null, message, _durationInSeconds);
         logs.Enqueue(log);
     }
+
+    public void CreateLog(string message, Sprite sprite, float _durationInSeconds = 3f)
+    {
+        ConsoleLog log = Instantiate(consoleLogPrefab, content);
+        log.Initialize(sprite, message, _durationInSeconds);
+        logs.Enqueue(log);
+    }
 }
