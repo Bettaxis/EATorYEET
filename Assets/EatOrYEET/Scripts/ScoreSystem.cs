@@ -9,9 +9,28 @@ public class ScoreSystem : MonoBehaviour
     private int _currentScore;
     private float _globalScoreMultiplierBonus;
     private Dictionary<sFood.FoodCategory, float> _foodCategoryMultiplierBonus;
+    private Dictionary<sFood.FoodCategory, GameObject> _foodCategoryMultiplierDisplays;
+    private GameStateController _gameStateController = null;
 
     [SerializeField]
     private GameObject _totalScoreDisplay;
+
+    [Header("Multiplier Display Settings")]
+
+    // This is the prefab that will spawn all the multiplier displays
+    [SerializeField]
+    private GameObject _multipliersDisplayPrefab;
+
+    // This is an object which will be the parent of the multiplier displays
+    // This will allow us to easily change where the displays are spawned
+    [SerializeField]
+    private GameObject _multipliersDisplayParent;
+
+    [SerializeField]
+    private float _multipliersDisplayHoriontalSpacing = 2.5f;
+
+    [SerializeField]
+    private float _multipliersDisplayVerticalSpacing = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +44,61 @@ public class ScoreSystem : MonoBehaviour
 
         foreach(sFood.FoodCategory category in foodCategories){
             _foodCategoryMultiplierBonus[category] = 0f;
+        }
+        
+        _foodCategoryMultiplierDisplays = new Dictionary<sFood.FoodCategory, GameObject>();
+
+        SetUpMultipliersDisplay();
+    }
+
+    private void SetUpMultipliersDisplay()
+    {
+        sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
+        
+        float horizontalMultiplierSpacing = 2.5f;
+        float verticalMultiplierSpacing = 1.5f;
+        float numMultipliersSoFar = 0;
+        foreach(sFood.FoodCategory category in foodCategories){
+            Vector3 newMultiplierDisplayPosn = Vector3.zero;
+            newMultiplierDisplayPosn.y -= (numMultipliersSoFar % 5) * _multipliersDisplayVerticalSpacing;
+            newMultiplierDisplayPosn.x += (numMultipliersSoFar % 2) * _multipliersDisplayHoriontalSpacing;
+            
+            GameObject newMultiplierDisplay = Instantiate(_multipliersDisplayPrefab, Vector3.zero, Quaternion.identity, _multipliersDisplayParent.transform);
+            newMultiplierDisplay.transform.localPosition = newMultiplierDisplayPosn;
+            newMultiplierDisplay.transform.localRotation = Quaternion.identity;
+            ++numMultipliersSoFar;
+
+            Transform canvasTransform = newMultiplierDisplay.transform.Find("Canvas");
+
+            Transform multiplierNameTransform = canvasTransform.Find("Multiplier Name");
+            TextMeshProUGUI multiplierNameTextMp = multiplierNameTransform.gameObject.GetComponent<TextMeshProUGUI>();
+            multiplierNameTextMp.SetText(category.ToString());
+
+            Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");
+            TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
+            multiplierAmountTextMp.SetText("x1");
+
+            _foodCategoryMultiplierDisplays[category] = newMultiplierDisplay;
+        }
+    }
+
+    private void UpdateMultipliersDisplay()
+    {
+        sFood.FoodCategory[] foodCategories = (sFood.FoodCategory[])System.Enum.GetValues(typeof(sFood.FoodCategory));
+        foreach(sFood.FoodCategory category in foodCategories){
+            GameObject mutiplierDisplay = _foodCategoryMultiplierDisplays[category];
+            Transform canvasTransform = mutiplierDisplay.transform.Find("Canvas");
+            Transform multiplierAmountTransform = canvasTransform.Find("Multiplier Amount");
+            TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
+
+            float multiplierAmount = _foodCategoryMultiplierBonus[category];
+
+            if(multiplierAmount == 0f)
+            {
+                multiplierAmount = 1f;
+            }
+
+            multiplierAmountTextMp.SetText("x" + multiplierAmount);
         }
     }
 
@@ -53,14 +127,27 @@ public class ScoreSystem : MonoBehaviour
             scoreValue *= -1;
         }
 
-        scoreValue += (int)(scoreValue * Math.Min(totalCategoryMultiplierBonuses - 1, 0));
-        scoreValue += (int)(scoreValue * Math.Min(_globalScoreMultiplierBonus - 1, 0));
+        scoreValue += (int)(scoreValue * Math.Max(totalCategoryMultiplierBonuses - 1, 0));
+        scoreValue += (int)(scoreValue * Math.Max(_globalScoreMultiplierBonus - 1, 0));
 
         _currentScore += scoreValue;
 
         // Debugging purposes. Remove when UI is added.
         Debug.Log("ScoreSystem::AdjustScore - Player Score is now: " + _currentScore);
         UpdateTotalScoreDisplay();
+
+        if(_gameStateController != null)
+        {
+            if(_gameStateController.GetScoreToWin() <= _currentScore)
+            {
+                _gameStateController.EndGame();
+            }
+        }
+    }
+
+    public void SetGameStateController(GameStateController gameStateController)
+    {
+        _gameStateController = gameStateController;
     }
 
     public int GetScore()
