@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Cucumber Slice
   _pointValue: 25
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: fa467832bad5cce44aa8da739c467f6c, type: 3}
   _foodColour: {r: 0, g: 0.40784317, b: 0, a: 1}

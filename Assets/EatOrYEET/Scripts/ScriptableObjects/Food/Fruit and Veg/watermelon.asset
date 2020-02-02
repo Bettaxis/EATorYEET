@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Watermelon
   _pointValue: 500
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 9e4aa68b8241ef149a5ab415fbcb5669, type: 3}
   _foodColour: {r: 0.227451, g: 0.86666673, b: 0.39607847, a: 1}

@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Lemon
   _pointValue: 15
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 5ea9f4ba226dfa54da655c3378701821, type: 3}
   _foodColour: {r: 0.9960785, g: 0.9960785, b: 0.18431373, a: 1}

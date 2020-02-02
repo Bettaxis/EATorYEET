@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Red Onion
   _pointValue: 50
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: f7fca053f0333fd44b5590e1b5dc60bc, type: 3}
   _foodColour: {r: 0.83921576, g: 0.3137255, b: 0.32156864, a: 1}

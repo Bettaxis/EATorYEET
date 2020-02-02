@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Red Apple Piece
   _pointValue: 20
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 70c6504320abdcb41bf6eec46975d581, type: 3}
   _foodColour: {r: 0.9960785, g: 0.5176471, b: 0.32156864, a: 1}

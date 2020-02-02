@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Mango Milkshake
   _pointValue: 300
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 13c89a603e15c234494304fde53a0097, type: 3}
   _foodColour: {r: 0.9960785, g: 0.9960785, b: 0.32156864, a: 1}

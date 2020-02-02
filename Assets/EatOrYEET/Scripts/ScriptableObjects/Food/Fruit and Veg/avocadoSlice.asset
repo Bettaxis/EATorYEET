@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Avocado
   _pointValue: 200
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 504bd84d016192f4794e1fb3d491a912, type: 3}
   _foodColour: {r: 1, g: 1, b: 1, a: 1}
