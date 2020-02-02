@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Banana
   _pointValue: 150
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 628e85c29989e734c9436c0ff1217230, type: 3}
   _foodColour: {r: 1, g: 0.9333204, b: 0, a: 1}

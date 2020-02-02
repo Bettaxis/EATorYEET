@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Purple Lollipop
   _pointValue: 250
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: b0ea10866d9a23a40b48803865794c28, type: 3}
   _foodColour: {r: 0.9960785, g: 0.023529414, b: 0.43137258, a: 1}

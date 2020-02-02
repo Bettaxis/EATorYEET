@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class GameStateController : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class GameStateController : MonoBehaviour
     [Header("Timed Game Settings")]
     [SerializeField]
     private float _gameDuration;
+
+    [SerializeField]
+    private GameObject _timeLeftDisplay;
 
     [Header("Score Attack Settings")]
     [SerializeField]
@@ -63,6 +67,24 @@ public class GameStateController : MonoBehaviour
             {
                 Debug.LogError("ScoreSystem::Start - Score System is not assigned to the GameStateController");
             }
+        }
+    }
+
+    void Update(){
+        if(!_isTimedGame)
+        {
+            return;
+        }
+
+        if(_timeLeftDisplay != null)
+        {
+            Transform canvasTransform = _timeLeftDisplay.transform.Find("Canvas");
+            Transform multiplierAmountTransform = canvasTransform.Find("Time Display");
+            TextMeshProUGUI multiplierAmountTextMp = multiplierAmountTransform.gameObject.GetComponent<TextMeshProUGUI>();
+
+            float timeLeftSeconds = Math.Max(_gameDuration - (Time.time - _timeAtStart), 0);
+
+            multiplierAmountTextMp.SetText((int)(timeLeftSeconds) + "s");
         }
     }
 

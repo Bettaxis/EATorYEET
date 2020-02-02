@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Raddish
   _pointValue: 150
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: a4104aa54a9d61247a69db7d24581299, type: 3}
   _foodColour: {r: 0.9960785, g: 0.9960785, b: 0.9960785, a: 1}

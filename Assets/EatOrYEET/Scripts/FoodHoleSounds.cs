@@ -37,7 +37,8 @@ public class FoodHoleSounds : MonoBehaviour
             if(_console != null)
             {
                 string foodName = foodObj.foodScriptableObject.foodName;
-                _console.CreateLog(foodName + Time.time, 9999999999f);
+                Sprite foodSprite = foodObj.foodScriptableObject.foodSprite;
+                _console.CreateLog(foodName, foodSprite, 9999999999f);
             }
             else 
             {

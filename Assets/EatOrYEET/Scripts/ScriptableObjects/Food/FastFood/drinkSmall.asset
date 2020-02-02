@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: small Soda
   _pointValue: 50
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 7795c88f00fde2149812af432462ba04, type: 3}
   _foodColour: {r: 0.9960785, g: 0.5254902, b: 0.32156864, a: 1}

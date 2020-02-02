@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: eggplant
   _pointValue: 200
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 07e0269074661134a989d94d6665f214, type: 3}
   _foodColour: {r: 0.6117647, g: 0.24705884, b: 0.9960785, a: 1}

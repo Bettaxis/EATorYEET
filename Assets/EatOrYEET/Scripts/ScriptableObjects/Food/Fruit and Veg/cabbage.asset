@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Cabbage
   _pointValue: 200
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 889616d2e6f0f1446b06296143626f41, type: 3}
   _foodColour: {r: 0.6431373, g: 0.9960785, b: 0.0627451, a: 1}

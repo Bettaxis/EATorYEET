@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Large Soda
   _pointValue: 100
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 5f71b121909f3e245874c13e7d657647, type: 3}
   _foodColour: {r: 0.9960785, g: 0.5254902, b: 0.32156864, a: 1}

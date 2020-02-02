@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: cucumber Half
   _pointValue: 75
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: bd63287e5386abf4c880f15e5e9eb830, type: 3}
   _foodColour: {r: 0, g: 0.40784317, b: 0, a: 1}

@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: White Onion
   _pointValue: 50
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: bc77ce9750ccd6047af875cb6d8496e7, type: 3}
   _foodColour: {r: 1, g: 1, b: 1, a: 1}

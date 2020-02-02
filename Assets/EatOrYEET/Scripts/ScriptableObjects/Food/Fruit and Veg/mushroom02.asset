@@ -16,5 +16,5 @@ MonoBehaviour:
   _foodName: Mushroom
   _pointValue: 100
   _staminaCost: 0
-  _foodSprite: {fileID: 0}
+  _foodSprite: {fileID: 21300000, guid: 347d4dd6ad8df684288af785f8c2241c, type: 3}
   _foodColour: {r: 0.9960785, g: 0.44705886, b: 0.08627451, a: 1}
