@@ -122,7 +122,7 @@ public class IconGenerator : Editor
         EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
         
         // Spawn objects
-        GameObject spawnedObject = Instantiate(asset.Key, Vector3.down * asset.Value * 2, Quaternion.Euler(new Vector3(0,45,0))) as 
+        GameObject spawnedObject = Instantiate(asset.Key, Vector3.down * asset.Value, Quaternion.Euler(new Vector3(0,45,0))) as 
         GameObject;
         
         spawnedObject.transform.localScale = Vector3.one * asset.Value; // Scale asset based on scalar
